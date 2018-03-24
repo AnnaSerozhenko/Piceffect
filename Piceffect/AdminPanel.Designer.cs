@@ -36,6 +36,7 @@
 			this.BlockUser = new System.Windows.Forms.Button();
 			this.IDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.LoginColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.RegistrationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.VisitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.BlockedColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.Accounts)).BeginInit();
@@ -62,6 +63,7 @@
 			this.Accounts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDColumn,
             this.LoginColumn,
+            this.RegistrationColumn,
             this.VisitColumn,
             this.BlockedColumn});
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -77,13 +79,13 @@
 			this.Accounts.ReadOnly = true;
 			this.Accounts.RowHeadersVisible = false;
 			this.Accounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.Accounts.Size = new System.Drawing.Size(360, 150);
+			this.Accounts.Size = new System.Drawing.Size(435, 150);
 			this.Accounts.TabIndex = 0;
 			// 
 			// DeleteUser
 			// 
 			this.DeleteUser.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.DeleteUser.Location = new System.Drawing.Point(260, 3);
+			this.DeleteUser.Location = new System.Drawing.Point(335, 3);
 			this.DeleteUser.Name = "DeleteUser";
 			this.DeleteUser.Size = new System.Drawing.Size(95, 23);
 			this.DeleteUser.TabIndex = 1;
@@ -97,13 +99,13 @@
 			this.ActionPanel.Controls.Add(this.DeleteUser);
 			this.ActionPanel.Location = new System.Drawing.Point(12, 168);
 			this.ActionPanel.Name = "ActionPanel";
-			this.ActionPanel.Size = new System.Drawing.Size(360, 31);
+			this.ActionPanel.Size = new System.Drawing.Size(435, 31);
 			this.ActionPanel.TabIndex = 2;
 			// 
 			// BlockUser
 			// 
 			this.BlockUser.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.BlockUser.Location = new System.Drawing.Point(159, 3);
+			this.BlockUser.Location = new System.Drawing.Point(234, 3);
 			this.BlockUser.Name = "BlockUser";
 			this.BlockUser.Size = new System.Drawing.Size(95, 23);
 			this.BlockUser.TabIndex = 2;
@@ -115,6 +117,7 @@
 			this.IDColumn.HeaderText = "ID";
 			this.IDColumn.Name = "IDColumn";
 			this.IDColumn.ReadOnly = true;
+			this.IDColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 			this.IDColumn.Width = 35;
 			// 
 			// LoginColumn
@@ -124,6 +127,14 @@
 			this.LoginColumn.ReadOnly = true;
 			this.LoginColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 			this.LoginColumn.Width = 150;
+			// 
+			// RegistrationColumn
+			// 
+			this.RegistrationColumn.HeaderText = "Registration";
+			this.RegistrationColumn.Name = "RegistrationColumn";
+			this.RegistrationColumn.ReadOnly = true;
+			this.RegistrationColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			this.RegistrationColumn.Width = 75;
 			// 
 			// VisitColumn
 			// 
@@ -144,7 +155,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(384, 211);
+			this.ClientSize = new System.Drawing.Size(459, 211);
 			this.Controls.Add(this.ActionPanel);
 			this.Controls.Add(this.Accounts);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -167,6 +178,7 @@
 		private System.Windows.Forms.Button BlockUser;
 		private System.Windows.Forms.DataGridViewTextBoxColumn IDColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LoginColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn RegistrationColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn VisitColumn;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn BlockedColumn;
 	}
