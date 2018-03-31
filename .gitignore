@@ -1,4 +1,4 @@
 Piceffect/.vs/
 Piceffect/obj/
 Piceffect/bin/
-.DS_Store
+*.DS_Store
