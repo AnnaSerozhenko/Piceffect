@@ -1,6 +1,6 @@
 ﻿namespace Piceffect
 {
-	partial class Login
+	partial class LoginForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -87,6 +87,7 @@
 			this.SignUp.Size = new System.Drawing.Size(200, 22);
 			this.SignUp.TabIndex = 5;
 			this.SignUp.Text = "Sign Up";
+			this.SignUp.Click += new System.EventHandler(this.SignUp_Click);
 			// 
 			// SignIn
 			// 
@@ -110,7 +111,7 @@
 			this.LabelQuestion.Text = "Do you have not account?";
 			this.LabelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// Login
+			// LoginForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -125,7 +126,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
-			this.Name = "Login";
+			this.Name = "LoginForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Piceffect";
 			this.Load += new System.EventHandler(this.Login_Load);

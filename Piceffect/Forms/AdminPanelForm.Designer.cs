@@ -1,6 +1,6 @@
 ﻿namespace Piceffect
 {
-	partial class AdminPanel
+	partial class AdminPanelForm
 	{
 		/// <summary>
 		/// Required designer variable.

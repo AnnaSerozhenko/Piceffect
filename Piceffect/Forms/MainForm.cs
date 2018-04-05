@@ -3,9 +3,11 @@ using System.Windows.Forms;
 
 namespace Piceffect
 {
-	public partial class Main : Form
+	public partial class MainForm : Form
 	{
-		public Main()
+		private bool Exit = true;
+
+		public MainForm()
 		{
 			InitializeComponent();
             CorrectionType.SelectedIndex = 0;
@@ -24,13 +26,13 @@ namespace Piceffect
 
 		private void AdminPanelMI_Click(object sender, EventArgs e)
 		{
-			AdminPanel adminPanel = new AdminPanel();
+			AdminPanelForm adminPanel = new AdminPanelForm();
 			adminPanel.ShowDialog();
 		}
 
 		private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Settings settings = new Settings();
+			SettingsForm settings = new SettingsForm();
 			settings.ShowDialog();
 		}
 
@@ -38,5 +40,18 @@ namespace Piceffect
         {
 
         }
-    }
+
+		private void LogoutMI_Click(object sender, EventArgs e)
+		{
+			Session.Destroy();
+			Owner.Show();
+			Exit = false;
+			Close();
+		}
+
+		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (Exit) Application.Exit();
+		}
+	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace Piceffect
 {
-	partial class Main
+	partial class MainForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.MainMenu = new System.Windows.Forms.MenuStrip();
 			this.FileMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.OpenMI = new System.Windows.Forms.ToolStripMenuItem();
@@ -184,6 +184,7 @@
 			this.LogoutMI.Name = "LogoutMI";
 			this.LogoutMI.Size = new System.Drawing.Size(57, 20);
 			this.LogoutMI.Text = "Logout";
+			this.LogoutMI.Click += new System.EventHandler(this.LogoutMI_Click);
 			// 
 			// Tabs
 			// 
@@ -373,7 +374,7 @@
 			this.Effect.Size = new System.Drawing.Size(159, 21);
 			this.Effect.TabIndex = 2;
 			// 
-			// Main
+			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -387,9 +388,10 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MainMenuStrip = this.MainMenu;
 			this.MaximizeBox = false;
-			this.Name = "Main";
+			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Piceffect";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.Load += new System.EventHandler(this.Main_Load);
 			this.MainMenu.ResumeLayout(false);
 			this.MainMenu.PerformLayout();

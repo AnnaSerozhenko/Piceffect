@@ -1,6 +1,6 @@
 ﻿namespace Piceffect
 {
-	partial class Settings
+	partial class SettingsForm
 	{
 		/// <summary>
 		/// Required designer variable.
