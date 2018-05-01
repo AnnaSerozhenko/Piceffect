@@ -85,7 +85,7 @@
 			this.SignUp.Location = new System.Drawing.Point(11, 152);
 			this.SignUp.Name = "SignUp";
 			this.SignUp.Size = new System.Drawing.Size(200, 22);
-			this.SignUp.TabIndex = 5;
+			this.SignUp.TabIndex = 3;
 			this.SignUp.Text = "Sign Up";
 			this.SignUp.Click += new System.EventHandler(this.SignUp_Click);
 			// 
@@ -95,7 +95,7 @@
 			this.SignIn.Location = new System.Drawing.Point(11, 100);
 			this.SignIn.Name = "SignIn";
 			this.SignIn.Size = new System.Drawing.Size(200, 22);
-			this.SignIn.TabIndex = 6;
+			this.SignIn.TabIndex = 2;
 			this.SignIn.Text = "Sign In";
 			this.SignIn.UseVisualStyleBackColor = true;
 			this.SignIn.Click += new System.EventHandler(this.SignIn_Click);

@@ -28,27 +28,22 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+			this.components = new System.ComponentModel.Container();
 			this.MainMenu = new System.Windows.Forms.MenuStrip();
 			this.FileMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.OpenMI = new System.Windows.Forms.ToolStripMenuItem();
-			this.SaveMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.EditMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.ShowMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.ProcessMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolsMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.AdminPanelMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.SettingsMI = new System.Windows.Forms.ToolStripMenuItem();
-			this.Account = new System.Windows.Forms.ToolStripMenuItem();
+			this.AccountMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.HelpMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.ManualMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.AboutMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.LogoutMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.Tabs = new System.Windows.Forms.TabControl();
-			this.TP0 = new System.Windows.Forms.TabPage();
-			this.P0 = new System.Windows.Forms.Panel();
-			this.PB0 = new System.Windows.Forms.PictureBox();
-			this.TP1 = new System.Windows.Forms.TabPage();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.TabCorrection = new System.Windows.Forms.TabPage();
 			this.CorrectionType = new System.Windows.Forms.ComboBox();
@@ -58,18 +53,21 @@
 			this.TabWave = new System.Windows.Forms.TabPage();
 			this.TabGlass = new System.Windows.Forms.TabPage();
 			this.StatusBar = new System.Windows.Forms.StatusStrip();
-			this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.TotalProgress = new System.Windows.Forms.ToolStripProgressBar();
 			this.ApplyCorrection = new System.Windows.Forms.Button();
 			this.Effect = new System.Windows.Forms.ComboBox();
+			this.OpenFile = new System.Windows.Forms.OpenFileDialog();
+			this.ImageMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.Fullsize = new System.Windows.Forms.ToolStripMenuItem();
+			this.CloseImage = new System.Windows.Forms.ToolStripMenuItem();
+			this.ResetChanges = new System.Windows.Forms.ToolStripMenuItem();
+			this.SaveFile = new System.Windows.Forms.SaveFileDialog();
+			this.SaveImage = new System.Windows.Forms.ToolStripMenuItem();
 			this.MainMenu.SuspendLayout();
-			this.Tabs.SuspendLayout();
-			this.TP0.SuspendLayout();
-			this.P0.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.PB0)).BeginInit();
 			this.tabControl1.SuspendLayout();
 			this.TabCorrection.SuspendLayout();
 			this.StatusBar.SuspendLayout();
+			this.ImageMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// MainMenu
@@ -91,8 +89,7 @@
 			// FileMI
 			// 
 			this.FileMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OpenMI,
-            this.SaveMI});
+            this.OpenMI});
 			this.FileMI.Name = "FileMI";
 			this.FileMI.Size = new System.Drawing.Size(39, 20);
 			this.FileMI.Text = "File";
@@ -100,16 +97,9 @@
 			// OpenMI
 			// 
 			this.OpenMI.Name = "OpenMI";
-			this.OpenMI.Size = new System.Drawing.Size(104, 22);
+			this.OpenMI.Size = new System.Drawing.Size(180, 22);
 			this.OpenMI.Text = "&Open";
 			this.OpenMI.Click += new System.EventHandler(this.OpenMI_Click);
-			// 
-			// SaveMI
-			// 
-			this.SaveMI.Name = "SaveMI";
-			this.SaveMI.Size = new System.Drawing.Size(104, 22);
-			this.SaveMI.Text = "&Save";
-			this.SaveMI.Click += new System.EventHandler(this.SaveMI_Click);
 			// 
 			// EditMI
 			// 
@@ -125,23 +115,25 @@
 			this.ShowMI.Checked = true;
 			this.ShowMI.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.ShowMI.Name = "ShowMI";
-			this.ShowMI.Size = new System.Drawing.Size(144, 22);
+			this.ShowMI.Size = new System.Drawing.Size(180, 22);
 			this.ShowMI.Text = "Show Result";
+			this.ShowMI.Click += new System.EventHandler(this.ShowMI_Click);
 			// 
 			// ProcessMI
 			// 
 			this.ProcessMI.Checked = true;
 			this.ProcessMI.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.ProcessMI.Name = "ProcessMI";
-			this.ProcessMI.Size = new System.Drawing.Size(144, 22);
+			this.ProcessMI.Size = new System.Drawing.Size(180, 22);
 			this.ProcessMI.Text = "Process All";
+			this.ProcessMI.Click += new System.EventHandler(this.ProcessMI_Click);
 			// 
 			// ToolsMI
 			// 
 			this.ToolsMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AdminPanelMI,
+            this.AccountMI,
             this.SettingsMI,
-            this.Account});
+            this.AdminPanelMI});
 			this.ToolsMI.Name = "ToolsMI";
 			this.ToolsMI.Size = new System.Drawing.Size(49, 20);
 			this.ToolsMI.Text = "Tools";
@@ -160,12 +152,12 @@
 			this.SettingsMI.Text = "Settings";
 			this.SettingsMI.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
 			// 
-			// Account
+			// AccountMI
 			// 
-			this.Account.Name = "Account";
-			this.Account.Size = new System.Drawing.Size(180, 22);
-			this.Account.Text = "Account";
-			this.Account.Click += new System.EventHandler(this.Account_Click);
+			this.AccountMI.Name = "AccountMI";
+			this.AccountMI.Size = new System.Drawing.Size(180, 22);
+			this.AccountMI.Text = "Account";
+			this.AccountMI.Click += new System.EventHandler(this.AccountMI_Click);
 			// 
 			// HelpMI
 			// 
@@ -179,13 +171,13 @@
 			// ManualMI
 			// 
 			this.ManualMI.Name = "ManualMI";
-			this.ManualMI.Size = new System.Drawing.Size(154, 22);
+			this.ManualMI.Size = new System.Drawing.Size(180, 22);
 			this.ManualMI.Text = "Manual";
 			// 
 			// AboutMI
 			// 
 			this.AboutMI.Name = "AboutMI";
-			this.AboutMI.Size = new System.Drawing.Size(154, 22);
+			this.AboutMI.Size = new System.Drawing.Size(180, 22);
 			this.AboutMI.Text = "About Piceffect";
 			// 
 			// LogoutMI
@@ -197,56 +189,12 @@
 			// 
 			// Tabs
 			// 
-			this.Tabs.Controls.Add(this.TP0);
-			this.Tabs.Controls.Add(this.TP1);
 			this.Tabs.Font = new System.Drawing.Font("Arial", 9F);
 			this.Tabs.Location = new System.Drawing.Point(12, 31);
 			this.Tabs.Name = "Tabs";
 			this.Tabs.SelectedIndex = 0;
 			this.Tabs.Size = new System.Drawing.Size(360, 200);
 			this.Tabs.TabIndex = 1;
-			// 
-			// TP0
-			// 
-			this.TP0.Controls.Add(this.P0);
-			this.TP0.Location = new System.Drawing.Point(4, 24);
-			this.TP0.Name = "TP0";
-			this.TP0.Padding = new System.Windows.Forms.Padding(3);
-			this.TP0.Size = new System.Drawing.Size(352, 172);
-			this.TP0.TabIndex = 0;
-			this.TP0.Text = "Image.bmp";
-			this.TP0.UseVisualStyleBackColor = true;
-			// 
-			// P0
-			// 
-			this.P0.AutoScroll = true;
-			this.P0.Controls.Add(this.PB0);
-			this.P0.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.P0.Location = new System.Drawing.Point(3, 3);
-			this.P0.Name = "P0";
-			this.P0.Size = new System.Drawing.Size(346, 166);
-			this.P0.TabIndex = 0;
-			// 
-			// PB0
-			// 
-			this.PB0.BackColor = System.Drawing.Color.Transparent;
-			this.PB0.Image = ((System.Drawing.Image)(resources.GetObject("PB0.Image")));
-			this.PB0.Location = new System.Drawing.Point(0, 0);
-			this.PB0.Name = "PB0";
-			this.PB0.Size = new System.Drawing.Size(2560, 1600);
-			this.PB0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-			this.PB0.TabIndex = 6;
-			this.PB0.TabStop = false;
-			// 
-			// TP1
-			// 
-			this.TP1.Location = new System.Drawing.Point(4, 24);
-			this.TP1.Name = "TP1";
-			this.TP1.Padding = new System.Windows.Forms.Padding(3);
-			this.TP1.Size = new System.Drawing.Size(352, 172);
-			this.TP1.TabIndex = 1;
-			this.TP1.Text = "Picture.jpg";
-			this.TP1.UseVisualStyleBackColor = true;
 			// 
 			// tabControl1
 			// 
@@ -337,7 +285,6 @@
 			// StatusBar
 			// 
 			this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusLabel,
             this.TotalProgress});
 			this.StatusBar.Location = new System.Drawing.Point(0, 239);
 			this.StatusBar.Name = "StatusBar";
@@ -346,18 +293,10 @@
 			this.StatusBar.TabIndex = 3;
 			this.StatusBar.Text = "statusStrip1";
 			// 
-			// StatusLabel
-			// 
-			this.StatusLabel.Name = "StatusLabel";
-			this.StatusLabel.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-			this.StatusLabel.Size = new System.Drawing.Size(81, 17);
-			this.StatusLabel.Text = "Processing...";
-			// 
 			// TotalProgress
 			// 
 			this.TotalProgress.Name = "TotalProgress";
 			this.TotalProgress.Size = new System.Drawing.Size(100, 16);
-			this.TotalProgress.Value = 75;
 			// 
 			// ApplyCorrection
 			// 
@@ -383,6 +322,53 @@
 			this.Effect.Size = new System.Drawing.Size(159, 21);
 			this.Effect.TabIndex = 2;
 			// 
+			// OpenFile
+			// 
+			this.OpenFile.Filter = "Images|*.bmp;*.jpg;*.jpeg";
+			// 
+			// ImageMenu
+			// 
+			this.ImageMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SaveImage,
+            this.ResetChanges,
+            this.Fullsize,
+            this.CloseImage});
+			this.ImageMenu.Name = "ImageMenu";
+			this.ImageMenu.Size = new System.Drawing.Size(152, 92);
+			// 
+			// Fullsize
+			// 
+			this.Fullsize.Name = "Fullsize";
+			this.Fullsize.Size = new System.Drawing.Size(151, 22);
+			this.Fullsize.Text = "Open Fullsize";
+			this.Fullsize.Click += new System.EventHandler(this.Fullsize_Click);
+			// 
+			// CloseImage
+			// 
+			this.CloseImage.Name = "CloseImage";
+			this.CloseImage.Size = new System.Drawing.Size(151, 22);
+			this.CloseImage.Text = "Close Image";
+			this.CloseImage.Click += new System.EventHandler(this.CloseImage_Click);
+			// 
+			// ResetChanges
+			// 
+			this.ResetChanges.Name = "ResetChanges";
+			this.ResetChanges.Size = new System.Drawing.Size(180, 22);
+			this.ResetChanges.Text = "Reset Changes";
+			this.ResetChanges.Click += new System.EventHandler(this.ResetChanges_Click);
+			// 
+			// SaveFile
+			// 
+			this.SaveFile.FileName = "Result.bmp";
+			this.SaveFile.Filter = "Images|*.bmp;*.jpg;*.jpeg";
+			// 
+			// SaveImage
+			// 
+			this.SaveImage.Name = "SaveImage";
+			this.SaveImage.Size = new System.Drawing.Size(180, 22);
+			this.SaveImage.Text = "Save Image";
+			this.SaveImage.Click += new System.EventHandler(this.SaveImage_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,16 +390,12 @@
 			this.Load += new System.EventHandler(this.Main_Load);
 			this.MainMenu.ResumeLayout(false);
 			this.MainMenu.PerformLayout();
-			this.Tabs.ResumeLayout(false);
-			this.TP0.ResumeLayout(false);
-			this.P0.ResumeLayout(false);
-			this.P0.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.PB0)).EndInit();
 			this.tabControl1.ResumeLayout(false);
 			this.TabCorrection.ResumeLayout(false);
 			this.TabCorrection.PerformLayout();
 			this.StatusBar.ResumeLayout(false);
 			this.StatusBar.PerformLayout();
+			this.ImageMenu.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -430,16 +412,11 @@
 		private System.Windows.Forms.ToolStripMenuItem ToolsMI;
 		private System.Windows.Forms.ToolStripMenuItem AdminPanelMI;
 		private System.Windows.Forms.ToolStripMenuItem SettingsMI;
-		private System.Windows.Forms.ToolStripMenuItem SaveMI;
 		private System.Windows.Forms.ToolStripMenuItem LogoutMI;
 		private System.Windows.Forms.TabControl Tabs;
-		private System.Windows.Forms.TabPage TP0;
-		private System.Windows.Forms.TabPage TP1;
 		private System.Windows.Forms.ToolStripMenuItem EditMI;
 		private System.Windows.Forms.ToolStripMenuItem ShowMI;
-		private System.Windows.Forms.Panel P0;
 		private System.Windows.Forms.ToolStripMenuItem ProcessMI;
-		private System.Windows.Forms.PictureBox PB0;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage TabCorrection;
         private System.Windows.Forms.TabPage TabGamma;
@@ -449,10 +426,16 @@
         private System.Windows.Forms.Label CorrectionTypeLabel;
         private System.Windows.Forms.ComboBox CorrectionType;
         private System.Windows.Forms.StatusStrip StatusBar;
-        private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.ToolStripProgressBar TotalProgress;
         private System.Windows.Forms.Button ApplyCorrection;
         private System.Windows.Forms.ComboBox Effect;
-		private System.Windows.Forms.ToolStripMenuItem Account;
+		private System.Windows.Forms.ToolStripMenuItem AccountMI;
+		private System.Windows.Forms.OpenFileDialog OpenFile;
+		private System.Windows.Forms.ContextMenuStrip ImageMenu;
+		private System.Windows.Forms.ToolStripMenuItem Fullsize;
+		private System.Windows.Forms.ToolStripMenuItem CloseImage;
+		private System.Windows.Forms.ToolStripMenuItem ResetChanges;
+		private System.Windows.Forms.SaveFileDialog SaveFile;
+		private System.Windows.Forms.ToolStripMenuItem SaveImage;
 	}
 }

@@ -46,15 +46,20 @@ namespace Piceffect
 				return;
 			}
 			bool success = DB.Login(LoginBox.Text, PasswordBox.Text);
-			if (!success) Message.Error(DB.Status, Text);
+			if (!success)
+			{
+				Message.Error(DB.Status, Text);
+				PasswordBox.Clear();
+				PasswordBox.Focus();
+			}
 			else
 			{
+				LoginBox.Clear();
+				PasswordBox.Clear();
 				MainForm form = new MainForm();
 				form.Show(this);
 				Hide();
 			}
-			LoginBox.Clear();
-			PasswordBox.Clear();
 		}
 
 		private void SignUp_Click(object sender, EventArgs e)
@@ -76,9 +81,11 @@ namespace Piceffect
 				result = DB.Register(LoginBox.Text, PasswordBox.Text);
 				if (!result) Message.Error(DB.Status, Text);
 				else Message.Info("You have successfully registered!" + Environment.NewLine + "Log in using the registration data.", Text);
+				Journal.Append(String.Format("{0} registered", LoginBox.Text));
 			}
 			LoginBox.Clear();
 			PasswordBox.Clear();
+			LoginBox.Focus();
 		}
 	}
 }

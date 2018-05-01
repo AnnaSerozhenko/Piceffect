@@ -29,7 +29,7 @@ namespace Piceffect
 				connection = new SQLiteConnection("Data Source=" + Config.DataBase + ";Version=3;");
 				connection.Open();
 				command = connection.CreateCommand();
-				command.CommandText = "CREATE TABLE IF NOT EXISTS \"users\" (\"id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\"login\" TEXT(16),\"password\" TEXT(128),\"registration\" TEXT(10),\"visit\" TEXT(19),\"is_admin\" INTEGER(1),\"blocked\" INTEGER(1));";
+				command.CommandText = "CREATE TABLE IF NOT EXISTS \"users\" (\"id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\"login\" TEXT(16),\"password\" TEXT(128),\"registration\" TEXT(10),\"visit\" TEXT(19),\"is_admin\" INTEGER(1),\"is_blocked\" INTEGER(1));";
 				command.ExecuteNonQuery();
 				connection.Close();
 				result = true;

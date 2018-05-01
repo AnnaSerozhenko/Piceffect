@@ -22,6 +22,7 @@ namespace Piceffect
 			else
 			{
 				Message.Info("Password successfuly changed!", Text);
+				Journal.Append(String.Format("{0} changed password", Session.Login));
 			}
 		}
 	}
