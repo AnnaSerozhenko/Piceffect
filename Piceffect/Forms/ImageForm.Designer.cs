@@ -29,10 +29,10 @@
 		private void InitializeComponent()
 		{
 			this.MainMenu = new System.Windows.Forms.MenuStrip();
-			this.PanelBox = new System.Windows.Forms.Panel();
-			this.Picture = new System.Windows.Forms.PictureBox();
 			this.View = new System.Windows.Forms.ToolStripMenuItem();
 			this.RealSize = new System.Windows.Forms.ToolStripMenuItem();
+			this.PanelBox = new System.Windows.Forms.Panel();
+			this.Picture = new System.Windows.Forms.PictureBox();
 			this.MainMenu.SuspendLayout();
 			this.PanelBox.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Picture)).BeginInit();
@@ -47,6 +47,21 @@
 			this.MainMenu.Size = new System.Drawing.Size(394, 24);
 			this.MainMenu.TabIndex = 3;
 			this.MainMenu.Text = "menuStrip1";
+			// 
+			// View
+			// 
+			this.View.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.RealSize});
+			this.View.Name = "View";
+			this.View.Size = new System.Drawing.Size(44, 20);
+			this.View.Text = "View";
+			// 
+			// RealSize
+			// 
+			this.RealSize.Name = "RealSize";
+			this.RealSize.Size = new System.Drawing.Size(119, 22);
+			this.RealSize.Text = "Real Size";
+			this.RealSize.Click += new System.EventHandler(this.RealSize_Click);
 			// 
 			// PanelBox
 			// 
@@ -67,21 +82,6 @@
 			this.Picture.TabIndex = 1;
 			this.Picture.TabStop = false;
 			// 
-			// View
-			// 
-			this.View.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RealSize});
-			this.View.Name = "View";
-			this.View.Size = new System.Drawing.Size(44, 20);
-			this.View.Text = "View";
-			// 
-			// RealSize
-			// 
-			this.RealSize.Name = "RealSize";
-			this.RealSize.Size = new System.Drawing.Size(180, 22);
-			this.RealSize.Text = "Real Size";
-			this.RealSize.Click += new System.EventHandler(this.RealSize_Click);
-			// 
 			// ImageForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -89,10 +89,11 @@
 			this.ClientSize = new System.Drawing.Size(394, 251);
 			this.Controls.Add(this.PanelBox);
 			this.Controls.Add(this.MainMenu);
+			this.KeyPreview = true;
 			this.Name = "ImageForm";
 			this.Text = "Piceffect";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-			this.Load += new System.EventHandler(this.ImageForm_Load);
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ImageForm_KeyDown);
 			this.Resize += new System.EventHandler(this.ImageForm_Resize);
 			this.MainMenu.ResumeLayout(false);
 			this.MainMenu.PerformLayout();

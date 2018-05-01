@@ -100,6 +100,11 @@ namespace Piceffect
 			ContextMenuStrip menu = (ContextMenuStrip)((ToolStripMenuItem)sender).Owner;
 			PictureBox box = (PictureBox)menu.SourceControl;
 			int index = int.Parse(box.Name.Remove(0, 2));
+			OpenFullsize(index);
+		}
+
+		private void OpenFullsize(int index)
+		{
 			ImageForm imageForm = new ImageForm(ShowMI.Checked && images[index].Result != null ? images[index].Result : images[index].Source);
 			imageForm.ShowDialog();
 		}
@@ -164,6 +169,34 @@ namespace Piceffect
 					images[index].Source.Save(SaveFile.FileName);
 				Message.Info("Image saved!", Text);
 			}
+		}
+
+		private void MainForm_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.Control)
+			{
+				switch (e.KeyCode)
+				{
+					case Keys.A:
+						Apply.PerformClick();
+						break;
+					case Keys.O:
+						OpenMI.PerformClick();
+						break;
+					case Keys.F:
+						if (Tabs.SelectedTab != null)
+						{
+							int index = int.Parse(Tabs.SelectedTab.Name.Remove(0, 2));
+							OpenFullsize(index);
+						}
+						break;
+				}
+			}
+		}
+
+		private void Apply_Click(object sender, EventArgs e)
+		{
+			Message.Info("Apply!", Text);
 		}
 	}
 

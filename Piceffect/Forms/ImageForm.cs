@@ -12,11 +12,6 @@ namespace Piceffect
 			Picture.Image = image;
 		}
 
-		private void ImageForm_Load(object sender, EventArgs e)
-		{
-
-		}
-
 		private void ImageForm_Resize(object sender, EventArgs e)
 		{
 			UpdateComponents();
@@ -45,6 +40,19 @@ namespace Piceffect
 		{
 			RealSize.Checked = !RealSize.Checked;
 			UpdateComponents();
+		}
+
+		private void ImageForm_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.Control)
+			{
+				switch (e.KeyCode)
+				{
+					case Keys.R:
+						RealSize.PerformClick();
+						break;
+				}
+			}
 		}
 	}
 }

@@ -54,7 +54,7 @@
 			this.TabGlass = new System.Windows.Forms.TabPage();
 			this.StatusBar = new System.Windows.Forms.StatusStrip();
 			this.TotalProgress = new System.Windows.Forms.ToolStripProgressBar();
-			this.ApplyCorrection = new System.Windows.Forms.Button();
+			this.Apply = new System.Windows.Forms.Button();
 			this.Effect = new System.Windows.Forms.ComboBox();
 			this.OpenFile = new System.Windows.Forms.OpenFileDialog();
 			this.ImageMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -298,14 +298,15 @@
 			this.TotalProgress.Name = "TotalProgress";
 			this.TotalProgress.Size = new System.Drawing.Size(100, 16);
 			// 
-			// ApplyCorrection
+			// Apply
 			// 
-			this.ApplyCorrection.Location = new System.Drawing.Point(543, 208);
-			this.ApplyCorrection.Name = "ApplyCorrection";
-			this.ApplyCorrection.Size = new System.Drawing.Size(80, 23);
-			this.ApplyCorrection.TabIndex = 4;
-			this.ApplyCorrection.Text = "Apply";
-			this.ApplyCorrection.UseVisualStyleBackColor = true;
+			this.Apply.Location = new System.Drawing.Point(543, 208);
+			this.Apply.Name = "Apply";
+			this.Apply.Size = new System.Drawing.Size(80, 23);
+			this.Apply.TabIndex = 4;
+			this.Apply.Text = "Apply";
+			this.Apply.UseVisualStyleBackColor = true;
+			this.Apply.Click += new System.EventHandler(this.Apply_Click);
 			// 
 			// Effect
 			// 
@@ -353,7 +354,7 @@
 			// ResetChanges
 			// 
 			this.ResetChanges.Name = "ResetChanges";
-			this.ResetChanges.Size = new System.Drawing.Size(180, 22);
+			this.ResetChanges.Size = new System.Drawing.Size(151, 22);
 			this.ResetChanges.Text = "Reset Changes";
 			this.ResetChanges.Click += new System.EventHandler(this.ResetChanges_Click);
 			// 
@@ -365,7 +366,7 @@
 			// SaveImage
 			// 
 			this.SaveImage.Name = "SaveImage";
-			this.SaveImage.Size = new System.Drawing.Size(180, 22);
+			this.SaveImage.Size = new System.Drawing.Size(151, 22);
 			this.SaveImage.Text = "Save Image";
 			this.SaveImage.Click += new System.EventHandler(this.SaveImage_Click);
 			// 
@@ -375,12 +376,13 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(634, 261);
 			this.Controls.Add(this.Effect);
-			this.Controls.Add(this.ApplyCorrection);
+			this.Controls.Add(this.Apply);
 			this.Controls.Add(this.StatusBar);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.Tabs);
 			this.Controls.Add(this.MainMenu);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.KeyPreview = true;
 			this.MainMenuStrip = this.MainMenu;
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
@@ -388,6 +390,7 @@
 			this.Text = "Piceffect";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.Load += new System.EventHandler(this.Main_Load);
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
 			this.MainMenu.ResumeLayout(false);
 			this.MainMenu.PerformLayout();
 			this.tabControl1.ResumeLayout(false);
@@ -427,7 +430,7 @@
         private System.Windows.Forms.ComboBox CorrectionType;
         private System.Windows.Forms.StatusStrip StatusBar;
         private System.Windows.Forms.ToolStripProgressBar TotalProgress;
-        private System.Windows.Forms.Button ApplyCorrection;
+        private System.Windows.Forms.Button Apply;
         private System.Windows.Forms.ComboBox Effect;
 		private System.Windows.Forms.ToolStripMenuItem AccountMI;
 		private System.Windows.Forms.OpenFileDialog OpenFile;
