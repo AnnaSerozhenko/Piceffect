@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Data;
 using System.Text;
 using System.Data.SQLite;
 using System.Security.Cryptography;
@@ -84,6 +83,7 @@ namespace Piceffect
 			}
 			catch (Exception exception)
 			{
+				Log.Append(exception.Message + Environment.NewLine + exception.StackTrace);
 				Status = "An error has occurred on the server! Contact your administrator.";
 			}
 			finally
@@ -107,6 +107,7 @@ namespace Piceffect
 			}
 			catch (Exception exception)
 			{
+				Log.Append(exception.Message + Environment.NewLine + exception.StackTrace);
 				Status = "An error has occurred on the server! Contact your administrator.";
 			}
 			finally
@@ -139,6 +140,36 @@ namespace Piceffect
 			}
 			catch (Exception exception)
 			{
+				Log.Append(exception.Message + Environment.NewLine + exception.StackTrace);
+				Status = "An error has occurred on the server! Contact your administrator.";
+			}
+			finally
+			{
+				if (reader != null && !reader.IsClosed) reader.Close();
+				connection.Close();
+			}
+			return result;
+		}
+
+		public static bool ChangePassword(string password)
+		{
+			string hash = GetHash(password);
+			command.CommandText = String.Format(
+				"UPDATE users SET password = '{0}' WHERE id = {1}",
+				hash,
+				Session.ID
+				);
+			bool result = false;
+			try
+			{
+				connection.Open();
+				reader = command.ExecuteReader();
+				result = reader.RecordsAffected > 0;
+				if (!result) Status = "Couldn't change password! Try later.";
+			}
+			catch (Exception exception)
+			{
+				Log.Append(exception.Message + Environment.NewLine + exception.StackTrace);
 				Status = "An error has occurred on the server! Contact your administrator.";
 			}
 			finally

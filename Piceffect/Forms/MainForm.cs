@@ -53,5 +53,11 @@ namespace Piceffect
 		{
 			if (Exit) Application.Exit();
 		}
+
+		private void Account_Click(object sender, EventArgs e)
+		{
+			AccountForm account = new AccountForm();
+			account.ShowDialog();
+		}
 	}
 }

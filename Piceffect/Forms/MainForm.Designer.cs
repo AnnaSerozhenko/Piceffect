@@ -39,6 +39,7 @@
 			this.ToolsMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.AdminPanelMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.SettingsMI = new System.Windows.Forms.ToolStripMenuItem();
+			this.Account = new System.Windows.Forms.ToolStripMenuItem();
 			this.HelpMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.ManualMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.AboutMI = new System.Windows.Forms.ToolStripMenuItem();
@@ -139,7 +140,8 @@
 			// 
 			this.ToolsMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AdminPanelMI,
-            this.SettingsMI});
+            this.SettingsMI,
+            this.Account});
 			this.ToolsMI.Name = "ToolsMI";
 			this.ToolsMI.Size = new System.Drawing.Size(49, 20);
 			this.ToolsMI.Text = "Tools";
@@ -147,16 +149,23 @@
 			// AdminPanelMI
 			// 
 			this.AdminPanelMI.Name = "AdminPanelMI";
-			this.AdminPanelMI.Size = new System.Drawing.Size(144, 22);
+			this.AdminPanelMI.Size = new System.Drawing.Size(180, 22);
 			this.AdminPanelMI.Text = "Admin Panel";
 			this.AdminPanelMI.Click += new System.EventHandler(this.AdminPanelMI_Click);
 			// 
 			// SettingsMI
 			// 
 			this.SettingsMI.Name = "SettingsMI";
-			this.SettingsMI.Size = new System.Drawing.Size(144, 22);
+			this.SettingsMI.Size = new System.Drawing.Size(180, 22);
 			this.SettingsMI.Text = "Settings";
 			this.SettingsMI.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+			// 
+			// Account
+			// 
+			this.Account.Name = "Account";
+			this.Account.Size = new System.Drawing.Size(180, 22);
+			this.Account.Text = "Account";
+			this.Account.Click += new System.EventHandler(this.Account_Click);
 			// 
 			// HelpMI
 			// 
@@ -444,5 +453,6 @@
         private System.Windows.Forms.ToolStripProgressBar TotalProgress;
         private System.Windows.Forms.Button ApplyCorrection;
         private System.Windows.Forms.ComboBox Effect;
-    }
+		private System.Windows.Forms.ToolStripMenuItem Account;
+	}
 }
