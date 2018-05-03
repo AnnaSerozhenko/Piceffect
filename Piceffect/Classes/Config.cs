@@ -24,6 +24,7 @@ namespace Piceffect
 						{
 							if (reader.Name == "database") DataBase = attribute;
 							if (reader.Name == "journal") Journal = attribute;
+							if (reader.Name == "log") Log = attribute;
 						}
 					}
 				}
@@ -42,6 +43,9 @@ namespace Piceffect
 				writer.WriteEndElement();
 				writer.WriteStartElement("journal");
 				writer.WriteAttributeString("path", Journal);
+				writer.WriteEndElement();
+				writer.WriteStartElement("log");
+				writer.WriteAttributeString("path", Log);
 				writer.WriteEndElement();
 				writer.WriteEndElement();
 				writer.WriteEndDocument();

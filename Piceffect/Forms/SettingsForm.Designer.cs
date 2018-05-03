@@ -41,7 +41,10 @@
 			this.JournalBox = new System.Windows.Forms.TextBox();
 			this.ActionPanel = new System.Windows.Forms.Panel();
 			this.SaveSettings = new System.Windows.Forms.Button();
-			this.OpenFile = new System.Windows.Forms.OpenFileDialog();
+			this.SelectFolder = new System.Windows.Forms.FolderBrowserDialog();
+			this.JournalRoot = new System.Windows.Forms.Button();
+			this.DatabaseRoot = new System.Windows.Forms.Button();
+			this.LogRoot = new System.Windows.Forms.Button();
 			this.Tabs.SuspendLayout();
 			this.TabGeneral.SuspendLayout();
 			this.ActionPanel.SuspendLayout();
@@ -61,6 +64,9 @@
 			// 
 			// TabGeneral
 			// 
+			this.TabGeneral.Controls.Add(this.LogRoot);
+			this.TabGeneral.Controls.Add(this.DatabaseRoot);
+			this.TabGeneral.Controls.Add(this.JournalRoot);
 			this.TabGeneral.Controls.Add(this.LogButton);
 			this.TabGeneral.Controls.Add(this.DatabaseButton);
 			this.TabGeneral.Controls.Add(this.JournalButton);
@@ -80,30 +86,33 @@
 			// 
 			// LogButton
 			// 
-			this.LogButton.Location = new System.Drawing.Point(294, 59);
+			this.LogButton.Location = new System.Drawing.Point(267, 59);
 			this.LogButton.Name = "LogButton";
-			this.LogButton.Size = new System.Drawing.Size(24, 22);
+			this.LogButton.Size = new System.Drawing.Size(23, 23);
 			this.LogButton.TabIndex = 8;
 			this.LogButton.Text = "...";
 			this.LogButton.UseVisualStyleBackColor = true;
+			this.LogButton.Click += new System.EventHandler(this.LogButton_Click);
 			// 
 			// DatabaseButton
 			// 
-			this.DatabaseButton.Location = new System.Drawing.Point(294, 33);
+			this.DatabaseButton.Location = new System.Drawing.Point(267, 33);
 			this.DatabaseButton.Name = "DatabaseButton";
-			this.DatabaseButton.Size = new System.Drawing.Size(24, 22);
+			this.DatabaseButton.Size = new System.Drawing.Size(23, 23);
 			this.DatabaseButton.TabIndex = 7;
 			this.DatabaseButton.Text = "...";
 			this.DatabaseButton.UseVisualStyleBackColor = true;
+			this.DatabaseButton.Click += new System.EventHandler(this.DatabaseButton_Click);
 			// 
 			// JournalButton
 			// 
-			this.JournalButton.Location = new System.Drawing.Point(294, 7);
+			this.JournalButton.Location = new System.Drawing.Point(267, 7);
 			this.JournalButton.Name = "JournalButton";
-			this.JournalButton.Size = new System.Drawing.Size(24, 22);
+			this.JournalButton.Size = new System.Drawing.Size(23, 23);
 			this.JournalButton.TabIndex = 6;
 			this.JournalButton.Text = "...";
 			this.JournalButton.UseVisualStyleBackColor = true;
+			this.JournalButton.Click += new System.EventHandler(this.JournalButton_Click);
 			// 
 			// LogLabel
 			// 
@@ -118,7 +127,8 @@
 			// 
 			this.LogBox.Location = new System.Drawing.Point(89, 60);
 			this.LogBox.Name = "LogBox";
-			this.LogBox.Size = new System.Drawing.Size(201, 21);
+			this.LogBox.ReadOnly = true;
+			this.LogBox.Size = new System.Drawing.Size(172, 21);
 			this.LogBox.TabIndex = 4;
 			this.LogBox.Text = "Log.txt";
 			// 
@@ -135,7 +145,8 @@
 			// 
 			this.DatabaseBox.Location = new System.Drawing.Point(89, 34);
 			this.DatabaseBox.Name = "DatabaseBox";
-			this.DatabaseBox.Size = new System.Drawing.Size(201, 21);
+			this.DatabaseBox.ReadOnly = true;
+			this.DatabaseBox.Size = new System.Drawing.Size(172, 21);
 			this.DatabaseBox.TabIndex = 2;
 			this.DatabaseBox.Text = "Database.sqlite";
 			// 
@@ -152,7 +163,8 @@
 			// 
 			this.JournalBox.Location = new System.Drawing.Point(89, 8);
 			this.JournalBox.Name = "JournalBox";
-			this.JournalBox.Size = new System.Drawing.Size(201, 21);
+			this.JournalBox.ReadOnly = true;
+			this.JournalBox.Size = new System.Drawing.Size(172, 21);
 			this.JournalBox.TabIndex = 0;
 			this.JournalBox.Text = "Journal.txt";
 			// 
@@ -176,6 +188,37 @@
 			this.SaveSettings.TabIndex = 0;
 			this.SaveSettings.Text = "Save";
 			this.SaveSettings.UseVisualStyleBackColor = true;
+			this.SaveSettings.Click += new System.EventHandler(this.SaveSettings_Click);
+			// 
+			// JournalRoot
+			// 
+			this.JournalRoot.Location = new System.Drawing.Point(296, 7);
+			this.JournalRoot.Name = "JournalRoot";
+			this.JournalRoot.Size = new System.Drawing.Size(23, 23);
+			this.JournalRoot.TabIndex = 9;
+			this.JournalRoot.Text = "\\";
+			this.JournalRoot.UseVisualStyleBackColor = true;
+			this.JournalRoot.Click += new System.EventHandler(this.JournalRoot_Click);
+			// 
+			// DatabaseRoot
+			// 
+			this.DatabaseRoot.Location = new System.Drawing.Point(296, 33);
+			this.DatabaseRoot.Name = "DatabaseRoot";
+			this.DatabaseRoot.Size = new System.Drawing.Size(23, 23);
+			this.DatabaseRoot.TabIndex = 10;
+			this.DatabaseRoot.Text = "\\";
+			this.DatabaseRoot.UseVisualStyleBackColor = true;
+			this.DatabaseRoot.Click += new System.EventHandler(this.DatabaseRoot_Click);
+			// 
+			// LogRoot
+			// 
+			this.LogRoot.Location = new System.Drawing.Point(296, 59);
+			this.LogRoot.Name = "LogRoot";
+			this.LogRoot.Size = new System.Drawing.Size(23, 23);
+			this.LogRoot.TabIndex = 11;
+			this.LogRoot.Text = "\\";
+			this.LogRoot.UseVisualStyleBackColor = true;
+			this.LogRoot.Click += new System.EventHandler(this.LogRoot_Click);
 			// 
 			// SettingsForm
 			// 
@@ -189,6 +232,7 @@
 			this.Name = "SettingsForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Settings";
+			this.Load += new System.EventHandler(this.SettingsForm_Load);
 			this.Tabs.ResumeLayout(false);
 			this.TabGeneral.ResumeLayout(false);
 			this.TabGeneral.PerformLayout();
@@ -212,6 +256,9 @@
 		private System.Windows.Forms.Button JournalButton;
 		private System.Windows.Forms.Panel ActionPanel;
 		private System.Windows.Forms.Button SaveSettings;
-		private System.Windows.Forms.OpenFileDialog OpenFile;
+		private System.Windows.Forms.FolderBrowserDialog SelectFolder;
+		private System.Windows.Forms.Button JournalRoot;
+		private System.Windows.Forms.Button LogRoot;
+		private System.Windows.Forms.Button DatabaseRoot;
 	}
 }
