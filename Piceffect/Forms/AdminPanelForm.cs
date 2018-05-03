@@ -15,6 +15,7 @@ namespace Piceffect
 			int index = 0;
 			if (Accounts.SelectedRows.Count > 0) index = Accounts.SelectedRows[0].Index;
 			Accounts.DataSource = DB.GetUsers();
+			Accounts.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 			Accounts.Columns.Remove("is_admin");
 			Accounts.Columns.Remove("is_blocked");
 			if (Accounts.Rows.Count > index) Accounts.CurrentCell = Accounts.Rows[index].Cells[0];
