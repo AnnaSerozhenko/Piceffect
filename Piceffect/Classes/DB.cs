@@ -3,6 +3,7 @@ using System.IO;
 using System.Text;
 using System.Data.SQLite;
 using System.Security.Cryptography;
+using System.Data;
 
 namespace Piceffect
 {
@@ -166,6 +167,92 @@ namespace Piceffect
 				reader = command.ExecuteReader();
 				result = reader.RecordsAffected > 0;
 				if (!result) Status = "Couldn't change password! Try later.";
+			}
+			catch (Exception exception)
+			{
+				Log.Append(exception.Message + Environment.NewLine + exception.StackTrace);
+				Status = "An error has occurred on the server! Contact your administrator.";
+			}
+			finally
+			{
+				if (reader != null && !reader.IsClosed) reader.Close();
+				connection.Close();
+			}
+			return result;
+		}
+
+		public static DataTable GetUsers()
+		{
+			DataTable data = new DataTable();
+			command.CommandText = "SELECT " +
+				"id AS ID, " +
+				"login AS Login, " +
+				"registration AS Registration, " +
+				"visit AS Visit, " +
+				"is_admin, " +
+				"is_blocked " +
+				"FROM users";
+			try
+			{
+				connection.Open();
+				SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
+				DataSet set = new DataSet();
+				adapter.Fill(set);
+				data = set.Tables[0];
+			}
+			catch (Exception exception)
+			{
+				Log.Append(exception.Message);
+				Status = "Произошла ошибка на сервере! Обратитесь к администратору.";
+			}
+			finally
+			{
+				connection.Close();
+			}
+			data.Columns.Add("Admin", typeof(bool), "Convert(is_admin, 'System.Boolean')");
+			data.Columns.Add("Blocked", typeof(bool), "Convert(is_blocked, 'System.Boolean')");
+			return data;
+		}
+
+		public static bool UpdateUser(string field, object value, int id)
+		{
+			command.CommandText = String.Format(
+				"UPDATE users SET {0} = @value WHERE id = {1}",
+				field,
+				id
+				);
+			command.Parameters.AddWithValue("@value", value);
+			bool result = false;
+			try
+			{
+				connection.Open();
+				reader = command.ExecuteReader();
+				result = reader.RecordsAffected > 0;
+				if (!result) Status = "Couldn't change value! Try later.";
+			}
+			catch (Exception exception)
+			{
+				Log.Append(exception.Message + Environment.NewLine + exception.StackTrace);
+				Status = "An error has occurred on the server! Contact your administrator.";
+			}
+			finally
+			{
+				if (reader != null && !reader.IsClosed) reader.Close();
+				connection.Close();
+			}
+			return result;
+		}
+
+		public static bool DeleteUser(int id)
+		{
+			command.CommandText = String.Format("DELETE FROM users WHERE id = {0}",	id);
+			bool result = false;
+			try
+			{
+				connection.Open();
+				reader = command.ExecuteReader();
+				result = reader.RecordsAffected > 0;
+				if (!result) Status = "Couldn't delete user! Try later.";
 			}
 			catch (Exception exception)
 			{

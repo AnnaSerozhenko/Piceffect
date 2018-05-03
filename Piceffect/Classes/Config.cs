@@ -7,6 +7,7 @@ namespace Piceffect
 	{
 		public static string DataBase = "Database.sqlite";
 		public static string Journal = "Journal.txt";
+		public static string Log = "Log.txt";
 
 		public static void Load()
 		{
