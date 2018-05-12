@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Filters\BaseFilter.cs" />
+    <Compile Include="Classes\Filters\FastBitmap.cs" />
+    <Compile Include="Classes\Filters\Gamma.cs" />
+    <Compile Include="Classes\Filters\Glass.cs" />
+    <Compile Include="Classes\Filters\Noise.cs" />
+    <Compile Include="Classes\Filters\Wave.cs" />
     <Compile Include="Forms\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
