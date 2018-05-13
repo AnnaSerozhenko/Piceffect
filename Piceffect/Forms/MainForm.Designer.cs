@@ -227,14 +227,15 @@
 			// ManualMI
 			// 
 			this.ManualMI.Name = "ManualMI";
-			this.ManualMI.Size = new System.Drawing.Size(154, 22);
+			this.ManualMI.Size = new System.Drawing.Size(180, 22);
 			this.ManualMI.Text = "Manual";
 			// 
 			// AboutMI
 			// 
 			this.AboutMI.Name = "AboutMI";
-			this.AboutMI.Size = new System.Drawing.Size(154, 22);
+			this.AboutMI.Size = new System.Drawing.Size(180, 22);
 			this.AboutMI.Text = "About Piceffect";
+			this.AboutMI.Click += new System.EventHandler(this.AboutMI_Click);
 			// 
 			// LogoutMI
 			// 

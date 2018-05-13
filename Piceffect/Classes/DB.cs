@@ -152,11 +152,12 @@ namespace Piceffect
 			return result;
 		}
 
-		public static bool ChangePassword(string password)
+		public static bool ChangeAccount(string login, string password)
 		{
 			string hash = GetHash(password);
 			command.CommandText = String.Format(
-				"UPDATE users SET password = '{0}' WHERE id = {1}",
+				"UPDATE users SET login = '{0}', password = '{1}' WHERE id = {2}",
+				login,
 				hash,
 				Session.ID
 				);
@@ -166,7 +167,7 @@ namespace Piceffect
 				connection.Open();
 				reader = command.ExecuteReader();
 				result = reader.RecordsAffected > 0;
-				if (!result) Status = "Couldn't change password! Try later.";
+				if (!result) Status = "Couldn't change account! Try later.";
 			}
 			catch (Exception exception)
 			{

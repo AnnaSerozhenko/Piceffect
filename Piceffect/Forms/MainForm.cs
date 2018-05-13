@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading;
+using System.Text;
 
 namespace Piceffect
 {
@@ -100,8 +101,9 @@ namespace Piceffect
 		{
 			if (thread != null && thread.IsAlive)
 			{
-				if (thread.ThreadState == ThreadState.Suspended) thread.Resume();
-				thread.Abort();
+				Message.Warning("Can not exit before processing is complete!", Text);
+				e.Cancel = true;
+				return;
 			}
 			if (Exit) Application.Exit();
 		}
@@ -247,8 +249,8 @@ namespace Piceffect
 			queueSize = queue.Count;
 			ProgressLabel.Text = "Processed: 0/" + queueSize;
 			string effect = CurrentEffect.Text;
-			Journal.Append(String.Format("{0} processed {1} images", Session.Login, queue.Count));
 			if (effect.Equals("Correction")) effect = CorrectionType.Text + effect;
+			Journal.Append(String.Format("{0} processed {1} image{2} using effect {3}", Session.Login, queue.Count, (queue.Count > 1 ? "s" : String.Empty), effect));
 			thread = new Thread(() => Processing(effect));
 			thread.Start();
 		}
@@ -457,6 +459,19 @@ namespace Piceffect
 			{
 				Log.Append(exception.Message + Environment.NewLine + exception.StackTrace);
 			}
+		}
+
+		private void AboutMI_Click(object sender, EventArgs e)
+		{
+			StringBuilder builder = new StringBuilder();
+			builder.Append("Product: Piceffect v1.0");
+			builder.Append(Environment.NewLine);
+			builder.Append(Environment.NewLine);
+			builder.Append("Company: Impleas");
+			builder.Append(Environment.NewLine);
+			builder.Append("Command: Dmitry Pyltsov, Yury Kapkov, Anna Serozhenko");
+			builder.Append(Environment.NewLine);
+			Message.Info(builder.ToString(), "About");
 		}
 	}
 
