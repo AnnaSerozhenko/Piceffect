@@ -24,12 +24,11 @@ namespace Piceffect
 		float gamma;
 
 		//обработка
-		public override void StartHandle(ProgressDelegate progress)
+		public override void StartHandle()
 		{
 			FastBitmap Source = new FastBitmap(this.Source);
 			FastBitmap Image = new FastBitmap(new Bitmap(Source.Width, Source.Height));
 			Pixel color;
-			//long count = 0;
 			for (int y = 0; y < Source.Height; ++y)
 			{
 				for (int x = 0; x < Source.Width; ++x)
@@ -39,7 +38,6 @@ namespace Piceffect
 					byte g = Limit(Math.Pow(color.G / 255.0, gamma) * 255 + 0.5);
 					byte b = Limit(Math.Pow(color.B / 255.0, gamma) * 255 + 0.5);
 					Image.SetPixel(x, y, r, g, b);
-					//progress((double)(++count) / (Source.Width * Source.Height));
 				}
 			}
 			Picture = Image.GetBitmap();

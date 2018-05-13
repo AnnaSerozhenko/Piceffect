@@ -21,6 +21,6 @@ namespace Piceffect
 		Bitmap Result { get; }
 
 		//Запуск обработки
-		void StartHandle(ProgressDelegate progress);
+		void StartHandle();
 	}
 }

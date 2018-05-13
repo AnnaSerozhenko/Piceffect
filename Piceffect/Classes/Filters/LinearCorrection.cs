@@ -14,12 +14,11 @@ namespace Piceffect
 		public override Bitmap Result { get => Picture; }
 
 		//обработка
-		public override void StartHandle(ProgressDelegate progress)
+		public override void StartHandle()
 		{
 			byte min = 255, max = 0;
 			FastBitmap Image = new FastBitmap(Source);
 			Pixel pixel;
-			//long count = 0;
 			for (int y = 0; y < Image.Height; ++y)
 			{
 				for (int x = 0; x < Image.Width; ++x)
@@ -27,7 +26,6 @@ namespace Piceffect
 					pixel = Image.GetPixel(x, y);
 					min = Math.Min(min, (byte)((pixel.R + pixel.G + pixel.B) / 3));
 					max = Math.Max(max, (byte)((pixel.R + pixel.G + pixel.B) / 3));
-					//progress((double)(++count) / (Source.Width * Source.Height * 2));
 				}
 			}
 			float coefficient = 255f / (max - min);
@@ -40,7 +38,6 @@ namespace Piceffect
 					pixel.G = Limit((pixel.G - min) * coefficient);
 					pixel.B = Limit((pixel.B - min) * coefficient);
 					Image.SetPixel(x, y, pixel);
-					//progress((double)(++count) / (Source.Width * Source.Height * 2));
 				}
 			}
 			Picture = Image.GetBitmap();

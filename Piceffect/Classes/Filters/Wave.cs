@@ -14,12 +14,11 @@ namespace Piceffect
 		public override Bitmap Result { get => Picture; }
 
 		//обработка
-		public override void StartHandle(ProgressDelegate progress)
+		public override void StartHandle()
 		{
 			FastBitmap Source = new FastBitmap(this.Source);
 			FastBitmap Image = new FastBitmap(new Bitmap(Source.Width, Source.Height));
 			Pixel color;
-			//long count = 0;
 			for (int y = 0; y < Source.Height; ++y)
 			{
 				for (int x = 0; x < Source.Width; ++x)
@@ -29,7 +28,6 @@ namespace Piceffect
 					position = Math.Min(position, Source.Height - 1);
 					color = Source.GetPixel(x, position);
 					Image.SetPixel(x, y, color);
-					//progress((double)(++count) / (Source.Width * Source.Height));
 				}
 			}
 			Picture = Image.GetBitmap();

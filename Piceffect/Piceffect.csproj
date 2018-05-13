@@ -117,6 +117,7 @@
       <DependentUpon>ImageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IFilter.cs" />
+    <Compile Include="Classes\Effects.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\SettingsForm.cs">

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace Piceffect
 {
@@ -13,13 +14,19 @@ namespace Piceffect
 
 		public override Bitmap Result { get => Picture; }
 
-		//обработка
-		public override void StartHandle(ProgressDelegate progress)
+		//инициализация
+		public override void Init(SortedList<string, object> parameters)
 		{
-			float coefficient = 40f;
+			coefficient = float.Parse(parameters["coefficient"].ToString());
+		}
+
+		float coefficient;
+
+		//обработка
+		public override void StartHandle()
+		{
 			FastBitmap Image = new FastBitmap(Source);
 			Pixel pixel;
-			//long count = 0;
 			for (int y = 0; y < Image.Height; ++y)
 			{
 				for (int x = 0; x < Image.Width; ++x)
@@ -29,7 +36,6 @@ namespace Piceffect
 					pixel.G = Limit(coefficient * Math.Log(1 + pixel.G) / Math.Log(2));
 					pixel.B = Limit(coefficient * Math.Log(1 + pixel.B) / Math.Log(2));
 					Image.SetPixel(x, y, pixel);
-					//progress((double)(++count) / (Source.Width * Source.Height * 2));
 				}
 			}
 			Picture = Image.GetBitmap();

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Piceffect
 {
@@ -27,6 +28,7 @@ namespace Piceffect
 			Config.Journal = JournalBox.Text;
 			Config.DataBase = DatabaseBox.Text;
 			Config.Log = LogBox.Text;
+			Journal.Append(String.Format("{0} changed settings", Session.Login));
 			Message.Info("Settings was saved!", Text);
 		}
 

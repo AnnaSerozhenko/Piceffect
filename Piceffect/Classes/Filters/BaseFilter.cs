@@ -17,7 +17,7 @@ namespace Piceffect
 			throw new NotImplementedException();
 		}
 
-		public virtual void StartHandle(ProgressDelegate progress)
+		public virtual void StartHandle()
 		{
 			throw new NotImplementedException();
 		}

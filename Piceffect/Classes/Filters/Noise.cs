@@ -26,11 +26,10 @@ namespace Piceffect
 		float scale;
 
 		//обработка
-		public override void StartHandle(ProgressDelegate progress)
+		public override void StartHandle()
 		{
 			FastBitmap Image = new FastBitmap(Source);
 			Pixel color;
-			//long count = 0;
 			Random random = new Random();
 			int size = (int)(Image.Width * Image.Height * scale);
 			for (int i = 0; i < size; ++i)
@@ -43,7 +42,6 @@ namespace Piceffect
 				byte g = Limit(color.G + shift);
 				byte b = Limit(color.B + shift);
 				Image.SetPixel(x, y, r, g, b);
-				//progress((double)(++count) / size);
 			}
 			Picture = Image.GetBitmap();
 		}
