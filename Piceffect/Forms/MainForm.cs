@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading;
 using System.Text;
+using System.Reflection;
 
 namespace Piceffect
 {
@@ -495,6 +496,15 @@ namespace Piceffect
 			builder.Append("Command: Dmitry Pyltsov, Yury Kapkov, Anna Serozhenko");
 			builder.Append(Environment.NewLine);
 			Message.Info(builder.ToString(), "About");
+		}
+
+		private void ManualMI_Click(object sender, EventArgs e)
+		{
+			string filename = "Manual.chm";
+			if (File.Exists(filename))
+				Help.ShowHelp(this, "Manual.chm", HelpNavigator.TableOfContents);
+			else
+				Message.Warning("Manual not found!", Text);			
 		}
 	}
 

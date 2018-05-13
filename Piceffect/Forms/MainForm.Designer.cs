@@ -227,8 +227,9 @@
 			// ManualMI
 			// 
 			this.ManualMI.Name = "ManualMI";
-			this.ManualMI.Size = new System.Drawing.Size(154, 22);
+			this.ManualMI.Size = new System.Drawing.Size(180, 22);
 			this.ManualMI.Text = "Manual";
+			this.ManualMI.Click += new System.EventHandler(this.ManualMI_Click);
 			// 
 			// AboutMI
 			// 

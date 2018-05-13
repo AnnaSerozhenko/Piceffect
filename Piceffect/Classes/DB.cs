@@ -18,7 +18,10 @@ namespace Piceffect
 		public static void CreateDatabase()
 		{
 			if (!Directory.Exists(Path.GetDirectoryName(Config.DataBase)))
-				Directory.CreateDirectory(Path.GetDirectoryName(Config.DataBase));
+			{
+				string directory = Path.GetDirectoryName(Config.DataBase);
+				if (!String.IsNullOrWhiteSpace(directory)) Directory.CreateDirectory(directory);
+			}
 			SQLiteConnection.CreateFile(Config.DataBase);
 		}
 
