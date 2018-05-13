@@ -47,29 +47,8 @@
 			this.ManualMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.AboutMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.LogoutMI = new System.Windows.Forms.ToolStripMenuItem();
-			this.Tabs = new System.Windows.Forms.TabControl();
-			this.Parameters = new System.Windows.Forms.TabControl();
-			this.TabCorrection = new System.Windows.Forms.TabPage();
-			this.CoefficientValue = new System.Windows.Forms.Label();
-			this.CoefficientBox = new System.Windows.Forms.TrackBar();
-			this.CoefficientLabel = new System.Windows.Forms.Label();
-			this.CorrectionType = new System.Windows.Forms.ComboBox();
-			this.CorrectionTypeLabel = new System.Windows.Forms.Label();
-			this.TabGamma = new System.Windows.Forms.TabPage();
-			this.GammaValue = new System.Windows.Forms.Label();
-			this.GammaBox = new System.Windows.Forms.TrackBar();
-			this.GammaLabel = new System.Windows.Forms.Label();
-			this.TabNoise = new System.Windows.Forms.TabPage();
-			this.SizeValue = new System.Windows.Forms.Label();
-			this.SizeBox = new System.Windows.Forms.TrackBar();
-			this.SizeLabel = new System.Windows.Forms.Label();
-			this.StrengthValue = new System.Windows.Forms.Label();
-			this.StrengthBox = new System.Windows.Forms.TrackBar();
-			this.StrengthLabel = new System.Windows.Forms.Label();
 			this.StatusBar = new System.Windows.Forms.StatusStrip();
 			this.ProgressLabel = new System.Windows.Forms.ToolStripStatusLabel();
-			this.Apply = new System.Windows.Forms.Button();
-			this.CurrentEffect = new System.Windows.Forms.ComboBox();
 			this.OpenImage = new System.Windows.Forms.OpenFileDialog();
 			this.ImageMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.SaveImage = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,19 +58,42 @@
 			this.SaveImageDialog = new System.Windows.Forms.SaveFileDialog();
 			this.OpenXML = new System.Windows.Forms.OpenFileDialog();
 			this.SaveXML = new System.Windows.Forms.SaveFileDialog();
+			this.ControlsPanel = new System.Windows.Forms.Panel();
+			this.TabNoise = new System.Windows.Forms.TabPage();
+			this.StrengthLabel = new System.Windows.Forms.Label();
+			this.StrengthBox = new System.Windows.Forms.TrackBar();
+			this.StrengthValue = new System.Windows.Forms.Label();
+			this.SizeLabel = new System.Windows.Forms.Label();
+			this.SizeBox = new System.Windows.Forms.TrackBar();
+			this.SizeValue = new System.Windows.Forms.Label();
+			this.TabGamma = new System.Windows.Forms.TabPage();
+			this.GammaLabel = new System.Windows.Forms.Label();
+			this.GammaBox = new System.Windows.Forms.TrackBar();
+			this.GammaValue = new System.Windows.Forms.Label();
+			this.TabCorrection = new System.Windows.Forms.TabPage();
+			this.CorrectionTypeLabel = new System.Windows.Forms.Label();
+			this.CorrectionType = new System.Windows.Forms.ComboBox();
+			this.CoefficientLabel = new System.Windows.Forms.Label();
+			this.CoefficientBox = new System.Windows.Forms.TrackBar();
+			this.CoefficientValue = new System.Windows.Forms.Label();
+			this.Parameters = new System.Windows.Forms.TabControl();
+			this.Apply = new System.Windows.Forms.Button();
+			this.CurrentEffect = new System.Windows.Forms.ComboBox();
 			this.PauseButton = new System.Windows.Forms.Button();
 			this.StopButton = new System.Windows.Forms.Button();
+			this.Tabs = new System.Windows.Forms.TabControl();
 			this.MainMenu.SuspendLayout();
-			this.Parameters.SuspendLayout();
-			this.TabCorrection.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.CoefficientBox)).BeginInit();
-			this.TabGamma.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.GammaBox)).BeginInit();
-			this.TabNoise.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.SizeBox)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.StrengthBox)).BeginInit();
 			this.StatusBar.SuspendLayout();
 			this.ImageMenu.SuspendLayout();
+			this.ControlsPanel.SuspendLayout();
+			this.TabNoise.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.StrengthBox)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.SizeBox)).BeginInit();
+			this.TabGamma.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.GammaBox)).BeginInit();
+			this.TabCorrection.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.CoefficientBox)).BeginInit();
+			this.Parameters.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// MainMenu
@@ -106,7 +108,7 @@
 			this.MainMenu.Location = new System.Drawing.Point(0, 0);
 			this.MainMenu.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
 			this.MainMenu.Name = "MainMenu";
-			this.MainMenu.Size = new System.Drawing.Size(634, 24);
+			this.MainMenu.Size = new System.Drawing.Size(734, 24);
 			this.MainMenu.TabIndex = 0;
 			this.MainMenu.Text = "menuStrip1";
 			// 
@@ -140,23 +142,21 @@
 			this.ShowMI.Checked = true;
 			this.ShowMI.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.ShowMI.Name = "ShowMI";
-			this.ShowMI.Size = new System.Drawing.Size(176, 22);
+			this.ShowMI.Size = new System.Drawing.Size(180, 22);
 			this.ShowMI.Text = "Show Result";
 			this.ShowMI.Click += new System.EventHandler(this.ShowMI_Click);
 			// 
 			// ProcessMI
 			// 
-			this.ProcessMI.Checked = true;
-			this.ProcessMI.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.ProcessMI.Name = "ProcessMI";
-			this.ProcessMI.Size = new System.Drawing.Size(176, 22);
+			this.ProcessMI.Size = new System.Drawing.Size(180, 22);
 			this.ProcessMI.Text = "Process All";
 			this.ProcessMI.Click += new System.EventHandler(this.ProcessMI_Click);
 			// 
 			// ResetAllMI
 			// 
 			this.ResetAllMI.Name = "ResetAllMI";
-			this.ResetAllMI.Size = new System.Drawing.Size(176, 22);
+			this.ResetAllMI.Size = new System.Drawing.Size(180, 22);
 			this.ResetAllMI.Text = "Reset All Changes";
 			this.ResetAllMI.Click += new System.EventHandler(this.ResetAllMI_Click);
 			// 
@@ -227,13 +227,13 @@
 			// ManualMI
 			// 
 			this.ManualMI.Name = "ManualMI";
-			this.ManualMI.Size = new System.Drawing.Size(180, 22);
+			this.ManualMI.Size = new System.Drawing.Size(154, 22);
 			this.ManualMI.Text = "Manual";
 			// 
 			// AboutMI
 			// 
 			this.AboutMI.Name = "AboutMI";
-			this.AboutMI.Size = new System.Drawing.Size(180, 22);
+			this.AboutMI.Size = new System.Drawing.Size(154, 22);
 			this.AboutMI.Text = "About Piceffect";
 			this.AboutMI.Click += new System.EventHandler(this.AboutMI_Click);
 			// 
@@ -244,233 +244,13 @@
 			this.LogoutMI.Text = "Logout";
 			this.LogoutMI.Click += new System.EventHandler(this.LogoutMI_Click);
 			// 
-			// Tabs
-			// 
-			this.Tabs.Font = new System.Drawing.Font("Arial", 9F);
-			this.Tabs.Location = new System.Drawing.Point(12, 31);
-			this.Tabs.Name = "Tabs";
-			this.Tabs.SelectedIndex = 0;
-			this.Tabs.Size = new System.Drawing.Size(360, 200);
-			this.Tabs.TabIndex = 1;
-			// 
-			// Parameters
-			// 
-			this.Parameters.Controls.Add(this.TabCorrection);
-			this.Parameters.Controls.Add(this.TabGamma);
-			this.Parameters.Controls.Add(this.TabNoise);
-			this.Parameters.Enabled = false;
-			this.Parameters.Location = new System.Drawing.Point(378, 31);
-			this.Parameters.Name = "Parameters";
-			this.Parameters.SelectedIndex = 0;
-			this.Parameters.Size = new System.Drawing.Size(245, 130);
-			this.Parameters.TabIndex = 2;
-			this.Parameters.SelectedIndexChanged += new System.EventHandler(this.Parameters_SelectedIndexChanged);
-			// 
-			// TabCorrection
-			// 
-			this.TabCorrection.Controls.Add(this.CoefficientValue);
-			this.TabCorrection.Controls.Add(this.CoefficientBox);
-			this.TabCorrection.Controls.Add(this.CoefficientLabel);
-			this.TabCorrection.Controls.Add(this.CorrectionType);
-			this.TabCorrection.Controls.Add(this.CorrectionTypeLabel);
-			this.TabCorrection.Location = new System.Drawing.Point(4, 22);
-			this.TabCorrection.Name = "TabCorrection";
-			this.TabCorrection.Padding = new System.Windows.Forms.Padding(4);
-			this.TabCorrection.Size = new System.Drawing.Size(237, 104);
-			this.TabCorrection.TabIndex = 0;
-			this.TabCorrection.Text = "Correction";
-			this.TabCorrection.UseVisualStyleBackColor = true;
-			// 
-			// CoefficientValue
-			// 
-			this.CoefficientValue.AutoSize = true;
-			this.CoefficientValue.Location = new System.Drawing.Point(67, 38);
-			this.CoefficientValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-			this.CoefficientValue.Name = "CoefficientValue";
-			this.CoefficientValue.Size = new System.Drawing.Size(19, 13);
-			this.CoefficientValue.TabIndex = 5;
-			this.CoefficientValue.Text = "25";
-			// 
-			// CoefficientBox
-			// 
-			this.CoefficientBox.AutoSize = false;
-			this.CoefficientBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.CoefficientBox.Location = new System.Drawing.Point(7, 54);
-			this.CoefficientBox.Maximum = 50;
-			this.CoefficientBox.Minimum = 1;
-			this.CoefficientBox.Name = "CoefficientBox";
-			this.CoefficientBox.Size = new System.Drawing.Size(223, 21);
-			this.CoefficientBox.TabIndex = 4;
-			this.CoefficientBox.Value = 25;
-			this.CoefficientBox.Scroll += new System.EventHandler(this.CoefficientBox_Scroll);
-			// 
-			// CoefficientLabel
-			// 
-			this.CoefficientLabel.AutoSize = true;
-			this.CoefficientLabel.Location = new System.Drawing.Point(7, 38);
-			this.CoefficientLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-			this.CoefficientLabel.Name = "CoefficientLabel";
-			this.CoefficientLabel.Size = new System.Drawing.Size(60, 13);
-			this.CoefficientLabel.TabIndex = 2;
-			this.CoefficientLabel.Text = "Coefficient:";
-			// 
-			// CorrectionType
-			// 
-			this.CorrectionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.CorrectionType.FormattingEnabled = true;
-			this.CorrectionType.Items.AddRange(new object[] {
-            "Linear",
-            "Nonlinear"});
-			this.CorrectionType.Location = new System.Drawing.Point(47, 7);
-			this.CorrectionType.Name = "CorrectionType";
-			this.CorrectionType.Size = new System.Drawing.Size(183, 21);
-			this.CorrectionType.TabIndex = 1;
-			this.CorrectionType.SelectedIndexChanged += new System.EventHandler(this.CorrectionType_SelectedIndexChanged);
-			// 
-			// CorrectionTypeLabel
-			// 
-			this.CorrectionTypeLabel.AutoSize = true;
-			this.CorrectionTypeLabel.Location = new System.Drawing.Point(7, 10);
-			this.CorrectionTypeLabel.Name = "CorrectionTypeLabel";
-			this.CorrectionTypeLabel.Size = new System.Drawing.Size(34, 13);
-			this.CorrectionTypeLabel.TabIndex = 0;
-			this.CorrectionTypeLabel.Text = "Type:";
-			// 
-			// TabGamma
-			// 
-			this.TabGamma.Controls.Add(this.GammaValue);
-			this.TabGamma.Controls.Add(this.GammaBox);
-			this.TabGamma.Controls.Add(this.GammaLabel);
-			this.TabGamma.Location = new System.Drawing.Point(4, 22);
-			this.TabGamma.Name = "TabGamma";
-			this.TabGamma.Padding = new System.Windows.Forms.Padding(4);
-			this.TabGamma.Size = new System.Drawing.Size(237, 104);
-			this.TabGamma.TabIndex = 1;
-			this.TabGamma.Text = "Gamma";
-			this.TabGamma.UseVisualStyleBackColor = true;
-			// 
-			// GammaValue
-			// 
-			this.GammaValue.AutoSize = true;
-			this.GammaValue.Location = new System.Drawing.Point(53, 10);
-			this.GammaValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-			this.GammaValue.Name = "GammaValue";
-			this.GammaValue.Size = new System.Drawing.Size(22, 13);
-			this.GammaValue.TabIndex = 10;
-			this.GammaValue.Text = "2.5";
-			// 
-			// GammaBox
-			// 
-			this.GammaBox.AutoSize = false;
-			this.GammaBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.GammaBox.Location = new System.Drawing.Point(7, 26);
-			this.GammaBox.Maximum = 50;
-			this.GammaBox.Minimum = 1;
-			this.GammaBox.Name = "GammaBox";
-			this.GammaBox.Size = new System.Drawing.Size(223, 21);
-			this.GammaBox.TabIndex = 9;
-			this.GammaBox.Value = 25;
-			this.GammaBox.Scroll += new System.EventHandler(this.GammaBox_Scroll);
-			// 
-			// GammaLabel
-			// 
-			this.GammaLabel.AutoSize = true;
-			this.GammaLabel.Location = new System.Drawing.Point(7, 10);
-			this.GammaLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-			this.GammaLabel.Name = "GammaLabel";
-			this.GammaLabel.Size = new System.Drawing.Size(46, 13);
-			this.GammaLabel.TabIndex = 8;
-			this.GammaLabel.Text = "Gamma:";
-			// 
-			// TabNoise
-			// 
-			this.TabNoise.Controls.Add(this.SizeValue);
-			this.TabNoise.Controls.Add(this.SizeBox);
-			this.TabNoise.Controls.Add(this.SizeLabel);
-			this.TabNoise.Controls.Add(this.StrengthValue);
-			this.TabNoise.Controls.Add(this.StrengthBox);
-			this.TabNoise.Controls.Add(this.StrengthLabel);
-			this.TabNoise.Location = new System.Drawing.Point(4, 22);
-			this.TabNoise.Name = "TabNoise";
-			this.TabNoise.Padding = new System.Windows.Forms.Padding(4);
-			this.TabNoise.Size = new System.Drawing.Size(237, 104);
-			this.TabNoise.TabIndex = 2;
-			this.TabNoise.Text = "Noise";
-			this.TabNoise.UseVisualStyleBackColor = true;
-			// 
-			// SizeValue
-			// 
-			this.SizeValue.AutoSize = true;
-			this.SizeValue.Location = new System.Drawing.Point(38, 56);
-			this.SizeValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-			this.SizeValue.Name = "SizeValue";
-			this.SizeValue.Size = new System.Drawing.Size(27, 13);
-			this.SizeValue.TabIndex = 16;
-			this.SizeValue.Text = "75%";
-			// 
-			// SizeBox
-			// 
-			this.SizeBox.AutoSize = false;
-			this.SizeBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.SizeBox.Location = new System.Drawing.Point(7, 72);
-			this.SizeBox.Maximum = 100;
-			this.SizeBox.Minimum = 5;
-			this.SizeBox.Name = "SizeBox";
-			this.SizeBox.Size = new System.Drawing.Size(223, 21);
-			this.SizeBox.TabIndex = 15;
-			this.SizeBox.Value = 75;
-			this.SizeBox.Scroll += new System.EventHandler(this.SizeBox_Scroll);
-			// 
-			// SizeLabel
-			// 
-			this.SizeLabel.AutoSize = true;
-			this.SizeLabel.Location = new System.Drawing.Point(7, 56);
-			this.SizeLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-			this.SizeLabel.Name = "SizeLabel";
-			this.SizeLabel.Size = new System.Drawing.Size(30, 13);
-			this.SizeLabel.TabIndex = 14;
-			this.SizeLabel.Text = "Size:";
-			// 
-			// StrengthValue
-			// 
-			this.StrengthValue.AutoSize = true;
-			this.StrengthValue.Location = new System.Drawing.Point(57, 10);
-			this.StrengthValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-			this.StrengthValue.Name = "StrengthValue";
-			this.StrengthValue.Size = new System.Drawing.Size(19, 13);
-			this.StrengthValue.TabIndex = 13;
-			this.StrengthValue.Text = "40";
-			// 
-			// StrengthBox
-			// 
-			this.StrengthBox.AutoSize = false;
-			this.StrengthBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.StrengthBox.Location = new System.Drawing.Point(7, 26);
-			this.StrengthBox.Maximum = 60;
-			this.StrengthBox.Minimum = 10;
-			this.StrengthBox.Name = "StrengthBox";
-			this.StrengthBox.Size = new System.Drawing.Size(223, 21);
-			this.StrengthBox.TabIndex = 12;
-			this.StrengthBox.Value = 40;
-			this.StrengthBox.Scroll += new System.EventHandler(this.StrengthBox_Scroll);
-			// 
-			// StrengthLabel
-			// 
-			this.StrengthLabel.AutoSize = true;
-			this.StrengthLabel.Location = new System.Drawing.Point(7, 10);
-			this.StrengthLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-			this.StrengthLabel.Name = "StrengthLabel";
-			this.StrengthLabel.Size = new System.Drawing.Size(50, 13);
-			this.StrengthLabel.TabIndex = 11;
-			this.StrengthLabel.Text = "Strength:";
-			// 
 			// StatusBar
 			// 
 			this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ProgressLabel});
-			this.StatusBar.Location = new System.Drawing.Point(0, 239);
+			this.StatusBar.Location = new System.Drawing.Point(0, 339);
 			this.StatusBar.Name = "StatusBar";
-			this.StatusBar.Size = new System.Drawing.Size(634, 22);
+			this.StatusBar.Size = new System.Drawing.Size(734, 22);
 			this.StatusBar.SizingGrip = false;
 			this.StatusBar.TabIndex = 3;
 			this.StatusBar.Text = "statusStrip1";
@@ -479,34 +259,6 @@
 			// 
 			this.ProgressLabel.Name = "ProgressLabel";
 			this.ProgressLabel.Size = new System.Drawing.Size(0, 17);
-			// 
-			// Apply
-			// 
-			this.Apply.Enabled = false;
-			this.Apply.Location = new System.Drawing.Point(543, 167);
-			this.Apply.Name = "Apply";
-			this.Apply.Size = new System.Drawing.Size(80, 51);
-			this.Apply.TabIndex = 4;
-			this.Apply.Text = "Apply";
-			this.Apply.UseVisualStyleBackColor = true;
-			this.Apply.Click += new System.EventHandler(this.Apply_Click);
-			// 
-			// CurrentEffect
-			// 
-			this.CurrentEffect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.CurrentEffect.Enabled = false;
-			this.CurrentEffect.FormattingEnabled = true;
-			this.CurrentEffect.Items.AddRange(new object[] {
-            "Correction",
-            "Gamma",
-            "Noise",
-            "Wave",
-            "Glass"});
-			this.CurrentEffect.Location = new System.Drawing.Point(378, 168);
-			this.CurrentEffect.Name = "CurrentEffect";
-			this.CurrentEffect.Size = new System.Drawing.Size(159, 21);
-			this.CurrentEffect.TabIndex = 2;
-			this.CurrentEffect.SelectedIndexChanged += new System.EventHandler(this.CurrentEffect_SelectedIndexChanged);
 			// 
 			// OpenImage
 			// 
@@ -565,10 +317,263 @@
 			this.SaveXML.FileName = "Parameters.xml";
 			this.SaveXML.Filter = "Parameters|*.xml";
 			// 
+			// ControlsPanel
+			// 
+			this.ControlsPanel.Controls.Add(this.Parameters);
+			this.ControlsPanel.Controls.Add(this.Apply);
+			this.ControlsPanel.Controls.Add(this.StopButton);
+			this.ControlsPanel.Controls.Add(this.CurrentEffect);
+			this.ControlsPanel.Controls.Add(this.PauseButton);
+			this.ControlsPanel.Dock = System.Windows.Forms.DockStyle.Right;
+			this.ControlsPanel.Location = new System.Drawing.Point(467, 24);
+			this.ControlsPanel.Name = "ControlsPanel";
+			this.ControlsPanel.Padding = new System.Windows.Forms.Padding(8);
+			this.ControlsPanel.Size = new System.Drawing.Size(267, 315);
+			this.ControlsPanel.TabIndex = 7;
+			// 
+			// TabNoise
+			// 
+			this.TabNoise.Controls.Add(this.SizeValue);
+			this.TabNoise.Controls.Add(this.SizeBox);
+			this.TabNoise.Controls.Add(this.SizeLabel);
+			this.TabNoise.Controls.Add(this.StrengthValue);
+			this.TabNoise.Controls.Add(this.StrengthBox);
+			this.TabNoise.Controls.Add(this.StrengthLabel);
+			this.TabNoise.Location = new System.Drawing.Point(4, 22);
+			this.TabNoise.Name = "TabNoise";
+			this.TabNoise.Padding = new System.Windows.Forms.Padding(4);
+			this.TabNoise.Size = new System.Drawing.Size(237, 104);
+			this.TabNoise.TabIndex = 2;
+			this.TabNoise.Text = "Noise";
+			this.TabNoise.UseVisualStyleBackColor = true;
+			// 
+			// StrengthLabel
+			// 
+			this.StrengthLabel.AutoSize = true;
+			this.StrengthLabel.Location = new System.Drawing.Point(7, 10);
+			this.StrengthLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+			this.StrengthLabel.Name = "StrengthLabel";
+			this.StrengthLabel.Size = new System.Drawing.Size(50, 13);
+			this.StrengthLabel.TabIndex = 11;
+			this.StrengthLabel.Text = "Strength:";
+			// 
+			// StrengthBox
+			// 
+			this.StrengthBox.AutoSize = false;
+			this.StrengthBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.StrengthBox.Location = new System.Drawing.Point(7, 26);
+			this.StrengthBox.Maximum = 60;
+			this.StrengthBox.Minimum = 10;
+			this.StrengthBox.Name = "StrengthBox";
+			this.StrengthBox.Size = new System.Drawing.Size(223, 21);
+			this.StrengthBox.TabIndex = 12;
+			this.StrengthBox.Value = 40;
+			this.StrengthBox.Scroll += new System.EventHandler(this.StrengthBox_Scroll);
+			// 
+			// StrengthValue
+			// 
+			this.StrengthValue.AutoSize = true;
+			this.StrengthValue.Location = new System.Drawing.Point(57, 10);
+			this.StrengthValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+			this.StrengthValue.Name = "StrengthValue";
+			this.StrengthValue.Size = new System.Drawing.Size(19, 13);
+			this.StrengthValue.TabIndex = 13;
+			this.StrengthValue.Text = "40";
+			// 
+			// SizeLabel
+			// 
+			this.SizeLabel.AutoSize = true;
+			this.SizeLabel.Location = new System.Drawing.Point(7, 56);
+			this.SizeLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+			this.SizeLabel.Name = "SizeLabel";
+			this.SizeLabel.Size = new System.Drawing.Size(30, 13);
+			this.SizeLabel.TabIndex = 14;
+			this.SizeLabel.Text = "Size:";
+			// 
+			// SizeBox
+			// 
+			this.SizeBox.AutoSize = false;
+			this.SizeBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.SizeBox.Location = new System.Drawing.Point(7, 72);
+			this.SizeBox.Maximum = 100;
+			this.SizeBox.Minimum = 5;
+			this.SizeBox.Name = "SizeBox";
+			this.SizeBox.Size = new System.Drawing.Size(223, 21);
+			this.SizeBox.TabIndex = 15;
+			this.SizeBox.Value = 75;
+			this.SizeBox.Scroll += new System.EventHandler(this.SizeBox_Scroll);
+			// 
+			// SizeValue
+			// 
+			this.SizeValue.AutoSize = true;
+			this.SizeValue.Location = new System.Drawing.Point(38, 56);
+			this.SizeValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+			this.SizeValue.Name = "SizeValue";
+			this.SizeValue.Size = new System.Drawing.Size(27, 13);
+			this.SizeValue.TabIndex = 16;
+			this.SizeValue.Text = "75%";
+			// 
+			// TabGamma
+			// 
+			this.TabGamma.Controls.Add(this.GammaValue);
+			this.TabGamma.Controls.Add(this.GammaBox);
+			this.TabGamma.Controls.Add(this.GammaLabel);
+			this.TabGamma.Location = new System.Drawing.Point(4, 22);
+			this.TabGamma.Name = "TabGamma";
+			this.TabGamma.Padding = new System.Windows.Forms.Padding(4);
+			this.TabGamma.Size = new System.Drawing.Size(237, 104);
+			this.TabGamma.TabIndex = 1;
+			this.TabGamma.Text = "Gamma";
+			this.TabGamma.UseVisualStyleBackColor = true;
+			// 
+			// GammaLabel
+			// 
+			this.GammaLabel.AutoSize = true;
+			this.GammaLabel.Location = new System.Drawing.Point(7, 10);
+			this.GammaLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+			this.GammaLabel.Name = "GammaLabel";
+			this.GammaLabel.Size = new System.Drawing.Size(46, 13);
+			this.GammaLabel.TabIndex = 8;
+			this.GammaLabel.Text = "Gamma:";
+			// 
+			// GammaBox
+			// 
+			this.GammaBox.AutoSize = false;
+			this.GammaBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.GammaBox.Location = new System.Drawing.Point(7, 26);
+			this.GammaBox.Maximum = 50;
+			this.GammaBox.Minimum = 1;
+			this.GammaBox.Name = "GammaBox";
+			this.GammaBox.Size = new System.Drawing.Size(223, 21);
+			this.GammaBox.TabIndex = 9;
+			this.GammaBox.Value = 25;
+			this.GammaBox.Scroll += new System.EventHandler(this.GammaBox_Scroll);
+			// 
+			// GammaValue
+			// 
+			this.GammaValue.AutoSize = true;
+			this.GammaValue.Location = new System.Drawing.Point(53, 10);
+			this.GammaValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+			this.GammaValue.Name = "GammaValue";
+			this.GammaValue.Size = new System.Drawing.Size(22, 13);
+			this.GammaValue.TabIndex = 10;
+			this.GammaValue.Text = "2.5";
+			// 
+			// TabCorrection
+			// 
+			this.TabCorrection.Controls.Add(this.CoefficientValue);
+			this.TabCorrection.Controls.Add(this.CoefficientBox);
+			this.TabCorrection.Controls.Add(this.CoefficientLabel);
+			this.TabCorrection.Controls.Add(this.CorrectionType);
+			this.TabCorrection.Controls.Add(this.CorrectionTypeLabel);
+			this.TabCorrection.Location = new System.Drawing.Point(4, 22);
+			this.TabCorrection.Name = "TabCorrection";
+			this.TabCorrection.Padding = new System.Windows.Forms.Padding(4);
+			this.TabCorrection.Size = new System.Drawing.Size(237, 104);
+			this.TabCorrection.TabIndex = 0;
+			this.TabCorrection.Text = "Correction";
+			this.TabCorrection.UseVisualStyleBackColor = true;
+			// 
+			// CorrectionTypeLabel
+			// 
+			this.CorrectionTypeLabel.AutoSize = true;
+			this.CorrectionTypeLabel.Location = new System.Drawing.Point(7, 10);
+			this.CorrectionTypeLabel.Name = "CorrectionTypeLabel";
+			this.CorrectionTypeLabel.Size = new System.Drawing.Size(34, 13);
+			this.CorrectionTypeLabel.TabIndex = 0;
+			this.CorrectionTypeLabel.Text = "Type:";
+			// 
+			// CorrectionType
+			// 
+			this.CorrectionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.CorrectionType.FormattingEnabled = true;
+			this.CorrectionType.Items.AddRange(new object[] {
+            "Linear",
+            "Nonlinear"});
+			this.CorrectionType.Location = new System.Drawing.Point(47, 7);
+			this.CorrectionType.Name = "CorrectionType";
+			this.CorrectionType.Size = new System.Drawing.Size(183, 21);
+			this.CorrectionType.TabIndex = 1;
+			this.CorrectionType.SelectedIndexChanged += new System.EventHandler(this.CorrectionType_SelectedIndexChanged);
+			// 
+			// CoefficientLabel
+			// 
+			this.CoefficientLabel.AutoSize = true;
+			this.CoefficientLabel.Location = new System.Drawing.Point(7, 38);
+			this.CoefficientLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+			this.CoefficientLabel.Name = "CoefficientLabel";
+			this.CoefficientLabel.Size = new System.Drawing.Size(60, 13);
+			this.CoefficientLabel.TabIndex = 2;
+			this.CoefficientLabel.Text = "Coefficient:";
+			// 
+			// CoefficientBox
+			// 
+			this.CoefficientBox.AutoSize = false;
+			this.CoefficientBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.CoefficientBox.Location = new System.Drawing.Point(7, 54);
+			this.CoefficientBox.Maximum = 50;
+			this.CoefficientBox.Minimum = 1;
+			this.CoefficientBox.Name = "CoefficientBox";
+			this.CoefficientBox.Size = new System.Drawing.Size(223, 21);
+			this.CoefficientBox.TabIndex = 4;
+			this.CoefficientBox.Value = 25;
+			this.CoefficientBox.Scroll += new System.EventHandler(this.CoefficientBox_Scroll);
+			// 
+			// CoefficientValue
+			// 
+			this.CoefficientValue.AutoSize = true;
+			this.CoefficientValue.Location = new System.Drawing.Point(67, 38);
+			this.CoefficientValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+			this.CoefficientValue.Name = "CoefficientValue";
+			this.CoefficientValue.Size = new System.Drawing.Size(19, 13);
+			this.CoefficientValue.TabIndex = 5;
+			this.CoefficientValue.Text = "25";
+			// 
+			// Parameters
+			// 
+			this.Parameters.Controls.Add(this.TabCorrection);
+			this.Parameters.Controls.Add(this.TabGamma);
+			this.Parameters.Controls.Add(this.TabNoise);
+			this.Parameters.Enabled = false;
+			this.Parameters.Location = new System.Drawing.Point(11, 11);
+			this.Parameters.Name = "Parameters";
+			this.Parameters.SelectedIndex = 0;
+			this.Parameters.Size = new System.Drawing.Size(245, 130);
+			this.Parameters.TabIndex = 2;
+			this.Parameters.SelectedIndexChanged += new System.EventHandler(this.Parameters_SelectedIndexChanged);
+			// 
+			// Apply
+			// 
+			this.Apply.Enabled = false;
+			this.Apply.Location = new System.Drawing.Point(176, 147);
+			this.Apply.Name = "Apply";
+			this.Apply.Size = new System.Drawing.Size(80, 51);
+			this.Apply.TabIndex = 4;
+			this.Apply.Text = "Apply";
+			this.Apply.UseVisualStyleBackColor = true;
+			this.Apply.Click += new System.EventHandler(this.Apply_Click);
+			// 
+			// CurrentEffect
+			// 
+			this.CurrentEffect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.CurrentEffect.Enabled = false;
+			this.CurrentEffect.FormattingEnabled = true;
+			this.CurrentEffect.Items.AddRange(new object[] {
+            "Correction",
+            "Gamma",
+            "Noise",
+            "Wave",
+            "Glass"});
+			this.CurrentEffect.Location = new System.Drawing.Point(11, 148);
+			this.CurrentEffect.Name = "CurrentEffect";
+			this.CurrentEffect.Size = new System.Drawing.Size(159, 21);
+			this.CurrentEffect.TabIndex = 2;
+			this.CurrentEffect.SelectedIndexChanged += new System.EventHandler(this.CurrentEffect_SelectedIndexChanged);
+			// 
 			// PauseButton
 			// 
 			this.PauseButton.Enabled = false;
-			this.PauseButton.Location = new System.Drawing.Point(377, 195);
+			this.PauseButton.Location = new System.Drawing.Point(10, 175);
 			this.PauseButton.Name = "PauseButton";
 			this.PauseButton.Size = new System.Drawing.Size(80, 23);
 			this.PauseButton.TabIndex = 5;
@@ -579,7 +584,7 @@
 			// StopButton
 			// 
 			this.StopButton.Enabled = false;
-			this.StopButton.Location = new System.Drawing.Point(463, 195);
+			this.StopButton.Location = new System.Drawing.Point(96, 175);
 			this.StopButton.Name = "StopButton";
 			this.StopButton.Size = new System.Drawing.Size(74, 23);
 			this.StopButton.TabIndex = 6;
@@ -587,23 +592,29 @@
 			this.StopButton.UseVisualStyleBackColor = true;
 			this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
 			// 
+			// Tabs
+			// 
+			this.Tabs.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.Tabs.Font = new System.Drawing.Font("Arial", 9F);
+			this.Tabs.Location = new System.Drawing.Point(0, 24);
+			this.Tabs.Margin = new System.Windows.Forms.Padding(0);
+			this.Tabs.Name = "Tabs";
+			this.Tabs.SelectedIndex = 0;
+			this.Tabs.Size = new System.Drawing.Size(467, 315);
+			this.Tabs.TabIndex = 8;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(634, 261);
-			this.Controls.Add(this.StopButton);
-			this.Controls.Add(this.PauseButton);
-			this.Controls.Add(this.CurrentEffect);
-			this.Controls.Add(this.Apply);
-			this.Controls.Add(this.StatusBar);
-			this.Controls.Add(this.Parameters);
+			this.ClientSize = new System.Drawing.Size(734, 361);
 			this.Controls.Add(this.Tabs);
+			this.Controls.Add(this.ControlsPanel);
+			this.Controls.Add(this.StatusBar);
 			this.Controls.Add(this.MainMenu);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.KeyPreview = true;
 			this.MainMenuStrip = this.MainMenu;
-			this.MaximizeBox = false;
+			this.MinimumSize = new System.Drawing.Size(645, 295);
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Piceffect";
@@ -612,20 +623,21 @@
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
 			this.MainMenu.ResumeLayout(false);
 			this.MainMenu.PerformLayout();
-			this.Parameters.ResumeLayout(false);
-			this.TabCorrection.ResumeLayout(false);
-			this.TabCorrection.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.CoefficientBox)).EndInit();
-			this.TabGamma.ResumeLayout(false);
-			this.TabGamma.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.GammaBox)).EndInit();
-			this.TabNoise.ResumeLayout(false);
-			this.TabNoise.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.SizeBox)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.StrengthBox)).EndInit();
 			this.StatusBar.ResumeLayout(false);
 			this.StatusBar.PerformLayout();
 			this.ImageMenu.ResumeLayout(false);
+			this.ControlsPanel.ResumeLayout(false);
+			this.TabNoise.ResumeLayout(false);
+			this.TabNoise.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.StrengthBox)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.SizeBox)).EndInit();
+			this.TabGamma.ResumeLayout(false);
+			this.TabGamma.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.GammaBox)).EndInit();
+			this.TabCorrection.ResumeLayout(false);
+			this.TabCorrection.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.CoefficientBox)).EndInit();
+			this.Parameters.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -643,19 +655,10 @@
 		private System.Windows.Forms.ToolStripMenuItem AdminPanelMI;
 		private System.Windows.Forms.ToolStripMenuItem SettingsMI;
 		private System.Windows.Forms.ToolStripMenuItem LogoutMI;
-		private System.Windows.Forms.TabControl Tabs;
 		private System.Windows.Forms.ToolStripMenuItem EditMI;
 		private System.Windows.Forms.ToolStripMenuItem ShowMI;
 		private System.Windows.Forms.ToolStripMenuItem ProcessMI;
-        private System.Windows.Forms.TabControl Parameters;
-        private System.Windows.Forms.TabPage TabCorrection;
-        private System.Windows.Forms.TabPage TabGamma;
-        private System.Windows.Forms.TabPage TabNoise;
-        private System.Windows.Forms.Label CorrectionTypeLabel;
-        private System.Windows.Forms.ComboBox CorrectionType;
         private System.Windows.Forms.StatusStrip StatusBar;
-        private System.Windows.Forms.Button Apply;
-        private System.Windows.Forms.ComboBox CurrentEffect;
 		private System.Windows.Forms.ToolStripMenuItem AccountMI;
 		private System.Windows.Forms.OpenFileDialog OpenImage;
 		private System.Windows.Forms.ContextMenuStrip ImageMenu;
@@ -664,26 +667,36 @@
 		private System.Windows.Forms.ToolStripMenuItem ResetChanges;
 		private System.Windows.Forms.SaveFileDialog SaveImageDialog;
 		private System.Windows.Forms.ToolStripMenuItem SaveImage;
-		private System.Windows.Forms.Label CoefficientValue;
-		private System.Windows.Forms.TrackBar CoefficientBox;
-		private System.Windows.Forms.Label CoefficientLabel;
-		private System.Windows.Forms.Label GammaValue;
-		private System.Windows.Forms.TrackBar GammaBox;
-		private System.Windows.Forms.Label GammaLabel;
-		private System.Windows.Forms.Label StrengthValue;
-		private System.Windows.Forms.TrackBar StrengthBox;
-		private System.Windows.Forms.Label StrengthLabel;
-		private System.Windows.Forms.Label SizeValue;
-		private System.Windows.Forms.TrackBar SizeBox;
-		private System.Windows.Forms.Label SizeLabel;
 		private System.Windows.Forms.ToolStripMenuItem EffectsMI;
 		private System.Windows.Forms.ToolStripMenuItem ImportMI;
 		private System.Windows.Forms.ToolStripMenuItem ExportMI;
 		private System.Windows.Forms.OpenFileDialog OpenXML;
 		private System.Windows.Forms.SaveFileDialog SaveXML;
-		private System.Windows.Forms.Button PauseButton;
-		private System.Windows.Forms.Button StopButton;
 		private System.Windows.Forms.ToolStripMenuItem ResetAllMI;
 		private System.Windows.Forms.ToolStripStatusLabel ProgressLabel;
+		private System.Windows.Forms.Panel ControlsPanel;
+		private System.Windows.Forms.TabControl Parameters;
+		private System.Windows.Forms.TabPage TabCorrection;
+		private System.Windows.Forms.Label CoefficientValue;
+		private System.Windows.Forms.TrackBar CoefficientBox;
+		private System.Windows.Forms.Label CoefficientLabel;
+		private System.Windows.Forms.ComboBox CorrectionType;
+		private System.Windows.Forms.Label CorrectionTypeLabel;
+		private System.Windows.Forms.TabPage TabGamma;
+		private System.Windows.Forms.Label GammaValue;
+		private System.Windows.Forms.TrackBar GammaBox;
+		private System.Windows.Forms.Label GammaLabel;
+		private System.Windows.Forms.TabPage TabNoise;
+		private System.Windows.Forms.Label SizeValue;
+		private System.Windows.Forms.TrackBar SizeBox;
+		private System.Windows.Forms.Label SizeLabel;
+		private System.Windows.Forms.Label StrengthValue;
+		private System.Windows.Forms.TrackBar StrengthBox;
+		private System.Windows.Forms.Label StrengthLabel;
+		private System.Windows.Forms.Button Apply;
+		private System.Windows.Forms.Button StopButton;
+		private System.Windows.Forms.ComboBox CurrentEffect;
+		private System.Windows.Forms.Button PauseButton;
+		private System.Windows.Forms.TabControl Tabs;
 	}
 }

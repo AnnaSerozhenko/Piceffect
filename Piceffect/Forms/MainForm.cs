@@ -134,20 +134,19 @@ namespace Piceffect
 			ContextMenuStrip menu = (ContextMenuStrip)((ToolStripMenuItem)sender).Owner;
 			PictureBox box = (PictureBox)menu.SourceControl;
 			int index = int.Parse(box.Name.Remove(0, 2));
-			bool changes = Message.Info("Do you want to save changes?", Text, true) == DialogResult.Yes;
-			if (images[index].Result != null && changes)
+			if (images[index].Result != null)
 			{
-				if (SaveImageDialog.ShowDialog() == DialogResult.OK)
+				if (Message.Info("Do you want to save changes?", Text, true) == DialogResult.Yes)
 				{
-					images[index].Result.Save(SaveImageDialog.FileName);
-					Message.Info("Image saved!", Text);
+					if (SaveImageDialog.ShowDialog() == DialogResult.OK)
+					{
+						images[index].Result.Save(SaveImageDialog.FileName);
+						Message.Info("Image saved!", Text);
+					}
 				}
 			}
-			else
-			{
-				images.Remove(index);
-				Tabs.TabPages.RemoveByKey("TP" + index);
-			}
+			images.Remove(index);
+			Tabs.TabPages.RemoveByKey("TP" + index);
 			UpdateUI();
 		}
 
@@ -169,23 +168,33 @@ namespace Piceffect
 
 		private void ResetChanges_Click(object sender, EventArgs e)
 		{
+			ContextMenuStrip menu = (ContextMenuStrip)((ToolStripMenuItem)sender).Owner;
+			PictureBox box = (PictureBox)menu.SourceControl;
+			int index = int.Parse(box.Name.Remove(0, 2));
+			Reset(index);
+		}
+
+		private void Reset(int index)
+		{
 			if (Message.Info("Do you really want to reset changes?", Text, true) == DialogResult.Yes)
 			{
-				ContextMenuStrip menu = (ContextMenuStrip)((ToolStripMenuItem)sender).Owner;
-				PictureBox box = (PictureBox)menu.SourceControl;
-				int index = int.Parse(box.Name.Remove(0, 2));
 				images[index].Result = null;
-				box.Image = images[index].Source;
+				((PictureBox)Tabs.Controls.Find("PB" + index, true)[0]).Image = images[index].Source;
 			}
 		}
 
 		private void SaveImage_Click(object sender, EventArgs e)
 		{
+			ContextMenuStrip menu = (ContextMenuStrip)((ToolStripMenuItem)sender).Owner;
+			PictureBox box = (PictureBox)menu.SourceControl;
+			int index = int.Parse(box.Name.Remove(0, 2));
+			Save(index);
+		}
+
+		private void Save(int index)
+		{
 			if (SaveImageDialog.ShowDialog() == DialogResult.OK)
 			{
-				ContextMenuStrip menu = (ContextMenuStrip)((ToolStripMenuItem)sender).Owner;
-				PictureBox box = (PictureBox)menu.SourceControl;
-				int index = int.Parse(box.Name.Remove(0, 2));
 				if (ShowMI.Checked && images[index].Result != null)
 					images[index].Result.Save(SaveImageDialog.FileName);
 				else
@@ -196,7 +205,7 @@ namespace Piceffect
 
 		private void MainForm_KeyDown(object sender, KeyEventArgs e)
 		{
-			if (e.Control)
+			if (e.Control && !(thread != null && thread.IsAlive))
 			{
 				switch (e.KeyCode)
 				{
@@ -211,6 +220,20 @@ namespace Piceffect
 						{
 							int index = int.Parse(Tabs.SelectedTab.Name.Remove(0, 2));
 							OpenFullsize(index);
+						}
+						break;
+					case Keys.S:
+						if (Tabs.SelectedTab != null)
+						{
+							int index = int.Parse(Tabs.SelectedTab.Name.Remove(0, 2));
+							Save(index);
+						}
+						break;
+					case Keys.R:
+						if (Tabs.SelectedTab != null)
+						{
+							int index = int.Parse(Tabs.SelectedTab.Name.Remove(0, 2));
+							Reset(index);
 						}
 						break;
 				}
