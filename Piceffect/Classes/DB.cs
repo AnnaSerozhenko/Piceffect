@@ -23,6 +23,7 @@ namespace Piceffect
 				if (!String.IsNullOrWhiteSpace(directory)) Directory.CreateDirectory(directory);
 			}
 			SQLiteConnection.CreateFile(Config.DataBase);
+			if (CheckConnection()) Register("admin", "admin", true);
 		}
 
 		public static bool CheckConnection()
@@ -122,17 +123,19 @@ namespace Piceffect
 			return result;
 		}
 
-		public static bool Register(string login, string password)
+		public static bool Register(string login, string password, bool admin = false)
 		{
 			string hash = GetHash(password);
 			string registration = DateTime.Now.ToString("dd.MM.yyyy");
 			string visit = DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
+			int is_admin = admin ? 1 : 0;
 			command.CommandText = String.Format(
-				"INSERT INTO users (login, password, registration, visit, is_admin, is_blocked) VALUES ('{0}', '{1}', '{2}', '{3}', 0, 0)", 
+				"INSERT INTO users (login, password, registration, visit, is_admin, is_blocked) VALUES ('{0}', '{1}', '{2}', '{3}', {4}, 0)", 
 				login, 
 				hash,
 				registration,
-				visit
+				visit,
+				is_admin
 				);
 			bool result = false;
 			try
