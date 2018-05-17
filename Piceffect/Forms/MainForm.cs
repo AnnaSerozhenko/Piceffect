@@ -74,13 +74,13 @@ namespace Piceffect
 			adminPanel.ShowDialog();
 		}
 
-		private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+		private void SettingsMI_Click(object sender, EventArgs e)
 		{
 			SettingsForm settings = new SettingsForm();
 			settings.ShowDialog();
 		}
 
-        private void Main_Load(object sender, EventArgs e)
+		private void Main_Load(object sender, EventArgs e)
         {
 			if (!Session.IsAdmin)
 			{
@@ -196,10 +196,9 @@ namespace Piceffect
 		{
 			if (SaveImageDialog.ShowDialog() == DialogResult.OK)
 			{
-				if (ShowMI.Checked && images[index].Result != null)
-					images[index].Result.Save(SaveImageDialog.FileName);
-				else
-					images[index].Source.Save(SaveImageDialog.FileName);
+				string filename = SaveImageDialog.FileName;
+				Bitmap image = (ShowMI.Checked && images[index].Result != null) ? images[index].Result : images[index].Source;
+				image.Save(filename, filename.EndsWith(".bmp") ? ImageFormat.Bmp : ImageFormat.Jpeg);
 				Message.Info("Image saved!", Text);
 			}
 		}

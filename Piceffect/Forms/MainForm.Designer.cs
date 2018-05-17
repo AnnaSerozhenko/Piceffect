@@ -59,41 +59,41 @@
 			this.OpenXML = new System.Windows.Forms.OpenFileDialog();
 			this.SaveXML = new System.Windows.Forms.SaveFileDialog();
 			this.ControlsPanel = new System.Windows.Forms.Panel();
-			this.TabNoise = new System.Windows.Forms.TabPage();
-			this.StrengthLabel = new System.Windows.Forms.Label();
-			this.StrengthBox = new System.Windows.Forms.TrackBar();
-			this.StrengthValue = new System.Windows.Forms.Label();
-			this.SizeLabel = new System.Windows.Forms.Label();
-			this.SizeBox = new System.Windows.Forms.TrackBar();
-			this.SizeValue = new System.Windows.Forms.Label();
-			this.TabGamma = new System.Windows.Forms.TabPage();
-			this.GammaLabel = new System.Windows.Forms.Label();
-			this.GammaBox = new System.Windows.Forms.TrackBar();
-			this.GammaValue = new System.Windows.Forms.Label();
-			this.TabCorrection = new System.Windows.Forms.TabPage();
-			this.CorrectionTypeLabel = new System.Windows.Forms.Label();
-			this.CorrectionType = new System.Windows.Forms.ComboBox();
-			this.CoefficientLabel = new System.Windows.Forms.Label();
-			this.CoefficientBox = new System.Windows.Forms.TrackBar();
-			this.CoefficientValue = new System.Windows.Forms.Label();
 			this.Parameters = new System.Windows.Forms.TabControl();
+			this.TabCorrection = new System.Windows.Forms.TabPage();
+			this.CoefficientValue = new System.Windows.Forms.Label();
+			this.CoefficientBox = new System.Windows.Forms.TrackBar();
+			this.CoefficientLabel = new System.Windows.Forms.Label();
+			this.CorrectionType = new System.Windows.Forms.ComboBox();
+			this.CorrectionTypeLabel = new System.Windows.Forms.Label();
+			this.TabGamma = new System.Windows.Forms.TabPage();
+			this.GammaValue = new System.Windows.Forms.Label();
+			this.GammaBox = new System.Windows.Forms.TrackBar();
+			this.GammaLabel = new System.Windows.Forms.Label();
+			this.TabNoise = new System.Windows.Forms.TabPage();
+			this.SizeValue = new System.Windows.Forms.Label();
+			this.SizeBox = new System.Windows.Forms.TrackBar();
+			this.SizeLabel = new System.Windows.Forms.Label();
+			this.StrengthValue = new System.Windows.Forms.Label();
+			this.StrengthBox = new System.Windows.Forms.TrackBar();
+			this.StrengthLabel = new System.Windows.Forms.Label();
 			this.Apply = new System.Windows.Forms.Button();
+			this.StopButton = new System.Windows.Forms.Button();
 			this.CurrentEffect = new System.Windows.Forms.ComboBox();
 			this.PauseButton = new System.Windows.Forms.Button();
-			this.StopButton = new System.Windows.Forms.Button();
 			this.Tabs = new System.Windows.Forms.TabControl();
 			this.MainMenu.SuspendLayout();
 			this.StatusBar.SuspendLayout();
 			this.ImageMenu.SuspendLayout();
 			this.ControlsPanel.SuspendLayout();
-			this.TabNoise.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.StrengthBox)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.SizeBox)).BeginInit();
-			this.TabGamma.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.GammaBox)).BeginInit();
+			this.Parameters.SuspendLayout();
 			this.TabCorrection.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CoefficientBox)).BeginInit();
-			this.Parameters.SuspendLayout();
+			this.TabGamma.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.GammaBox)).BeginInit();
+			this.TabNoise.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.SizeBox)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.StrengthBox)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// MainMenu
@@ -142,21 +142,21 @@
 			this.ShowMI.Checked = true;
 			this.ShowMI.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.ShowMI.Name = "ShowMI";
-			this.ShowMI.Size = new System.Drawing.Size(180, 22);
+			this.ShowMI.Size = new System.Drawing.Size(176, 22);
 			this.ShowMI.Text = "Show Result";
 			this.ShowMI.Click += new System.EventHandler(this.ShowMI_Click);
 			// 
 			// ProcessMI
 			// 
 			this.ProcessMI.Name = "ProcessMI";
-			this.ProcessMI.Size = new System.Drawing.Size(180, 22);
+			this.ProcessMI.Size = new System.Drawing.Size(176, 22);
 			this.ProcessMI.Text = "Process All";
 			this.ProcessMI.Click += new System.EventHandler(this.ProcessMI_Click);
 			// 
 			// ResetAllMI
 			// 
 			this.ResetAllMI.Name = "ResetAllMI";
-			this.ResetAllMI.Size = new System.Drawing.Size(180, 22);
+			this.ResetAllMI.Size = new System.Drawing.Size(176, 22);
 			this.ResetAllMI.Text = "Reset All Changes";
 			this.ResetAllMI.Click += new System.EventHandler(this.ResetAllMI_Click);
 			// 
@@ -174,21 +174,21 @@
 			// AccountMI
 			// 
 			this.AccountMI.Name = "AccountMI";
-			this.AccountMI.Size = new System.Drawing.Size(144, 22);
+			this.AccountMI.Size = new System.Drawing.Size(180, 22);
 			this.AccountMI.Text = "Account";
 			this.AccountMI.Click += new System.EventHandler(this.AccountMI_Click);
 			// 
 			// SettingsMI
 			// 
 			this.SettingsMI.Name = "SettingsMI";
-			this.SettingsMI.Size = new System.Drawing.Size(144, 22);
+			this.SettingsMI.Size = new System.Drawing.Size(180, 22);
 			this.SettingsMI.Text = "Settings";
-			this.SettingsMI.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+			this.SettingsMI.Click += new System.EventHandler(this.SettingsMI_Click);
 			// 
 			// AdminPanelMI
 			// 
 			this.AdminPanelMI.Name = "AdminPanelMI";
-			this.AdminPanelMI.Size = new System.Drawing.Size(144, 22);
+			this.AdminPanelMI.Size = new System.Drawing.Size(180, 22);
 			this.AdminPanelMI.Text = "Admin Panel";
 			this.AdminPanelMI.Click += new System.EventHandler(this.AdminPanelMI_Click);
 			// 
@@ -198,7 +198,7 @@
             this.ImportMI,
             this.ExportMI});
 			this.EffectsMI.Name = "EffectsMI";
-			this.EffectsMI.Size = new System.Drawing.Size(144, 22);
+			this.EffectsMI.Size = new System.Drawing.Size(180, 22);
 			this.EffectsMI.Text = "Effects";
 			// 
 			// ImportMI
@@ -227,7 +227,7 @@
 			// ManualMI
 			// 
 			this.ManualMI.Name = "ManualMI";
-			this.ManualMI.Size = new System.Drawing.Size(180, 22);
+			this.ManualMI.Size = new System.Drawing.Size(154, 22);
 			this.ManualMI.Text = "Manual";
 			this.ManualMI.Click += new System.EventHandler(this.ManualMI_Click);
 			// 
@@ -332,133 +332,18 @@
 			this.ControlsPanel.Size = new System.Drawing.Size(267, 315);
 			this.ControlsPanel.TabIndex = 7;
 			// 
-			// TabNoise
+			// Parameters
 			// 
-			this.TabNoise.Controls.Add(this.SizeValue);
-			this.TabNoise.Controls.Add(this.SizeBox);
-			this.TabNoise.Controls.Add(this.SizeLabel);
-			this.TabNoise.Controls.Add(this.StrengthValue);
-			this.TabNoise.Controls.Add(this.StrengthBox);
-			this.TabNoise.Controls.Add(this.StrengthLabel);
-			this.TabNoise.Location = new System.Drawing.Point(4, 22);
-			this.TabNoise.Name = "TabNoise";
-			this.TabNoise.Padding = new System.Windows.Forms.Padding(4);
-			this.TabNoise.Size = new System.Drawing.Size(237, 104);
-			this.TabNoise.TabIndex = 2;
-			this.TabNoise.Text = "Noise";
-			this.TabNoise.UseVisualStyleBackColor = true;
-			// 
-			// StrengthLabel
-			// 
-			this.StrengthLabel.AutoSize = true;
-			this.StrengthLabel.Location = new System.Drawing.Point(7, 10);
-			this.StrengthLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-			this.StrengthLabel.Name = "StrengthLabel";
-			this.StrengthLabel.Size = new System.Drawing.Size(50, 13);
-			this.StrengthLabel.TabIndex = 11;
-			this.StrengthLabel.Text = "Strength:";
-			// 
-			// StrengthBox
-			// 
-			this.StrengthBox.AutoSize = false;
-			this.StrengthBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.StrengthBox.Location = new System.Drawing.Point(7, 26);
-			this.StrengthBox.Maximum = 60;
-			this.StrengthBox.Minimum = 10;
-			this.StrengthBox.Name = "StrengthBox";
-			this.StrengthBox.Size = new System.Drawing.Size(223, 21);
-			this.StrengthBox.TabIndex = 12;
-			this.StrengthBox.Value = 40;
-			this.StrengthBox.Scroll += new System.EventHandler(this.StrengthBox_Scroll);
-			// 
-			// StrengthValue
-			// 
-			this.StrengthValue.AutoSize = true;
-			this.StrengthValue.Location = new System.Drawing.Point(57, 10);
-			this.StrengthValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-			this.StrengthValue.Name = "StrengthValue";
-			this.StrengthValue.Size = new System.Drawing.Size(19, 13);
-			this.StrengthValue.TabIndex = 13;
-			this.StrengthValue.Text = "40";
-			// 
-			// SizeLabel
-			// 
-			this.SizeLabel.AutoSize = true;
-			this.SizeLabel.Location = new System.Drawing.Point(7, 56);
-			this.SizeLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-			this.SizeLabel.Name = "SizeLabel";
-			this.SizeLabel.Size = new System.Drawing.Size(30, 13);
-			this.SizeLabel.TabIndex = 14;
-			this.SizeLabel.Text = "Size:";
-			// 
-			// SizeBox
-			// 
-			this.SizeBox.AutoSize = false;
-			this.SizeBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.SizeBox.Location = new System.Drawing.Point(7, 72);
-			this.SizeBox.Maximum = 100;
-			this.SizeBox.Minimum = 5;
-			this.SizeBox.Name = "SizeBox";
-			this.SizeBox.Size = new System.Drawing.Size(223, 21);
-			this.SizeBox.TabIndex = 15;
-			this.SizeBox.Value = 75;
-			this.SizeBox.Scroll += new System.EventHandler(this.SizeBox_Scroll);
-			// 
-			// SizeValue
-			// 
-			this.SizeValue.AutoSize = true;
-			this.SizeValue.Location = new System.Drawing.Point(38, 56);
-			this.SizeValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-			this.SizeValue.Name = "SizeValue";
-			this.SizeValue.Size = new System.Drawing.Size(27, 13);
-			this.SizeValue.TabIndex = 16;
-			this.SizeValue.Text = "75%";
-			// 
-			// TabGamma
-			// 
-			this.TabGamma.Controls.Add(this.GammaValue);
-			this.TabGamma.Controls.Add(this.GammaBox);
-			this.TabGamma.Controls.Add(this.GammaLabel);
-			this.TabGamma.Location = new System.Drawing.Point(4, 22);
-			this.TabGamma.Name = "TabGamma";
-			this.TabGamma.Padding = new System.Windows.Forms.Padding(4);
-			this.TabGamma.Size = new System.Drawing.Size(237, 104);
-			this.TabGamma.TabIndex = 1;
-			this.TabGamma.Text = "Gamma";
-			this.TabGamma.UseVisualStyleBackColor = true;
-			// 
-			// GammaLabel
-			// 
-			this.GammaLabel.AutoSize = true;
-			this.GammaLabel.Location = new System.Drawing.Point(7, 10);
-			this.GammaLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-			this.GammaLabel.Name = "GammaLabel";
-			this.GammaLabel.Size = new System.Drawing.Size(46, 13);
-			this.GammaLabel.TabIndex = 8;
-			this.GammaLabel.Text = "Gamma:";
-			// 
-			// GammaBox
-			// 
-			this.GammaBox.AutoSize = false;
-			this.GammaBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.GammaBox.Location = new System.Drawing.Point(7, 26);
-			this.GammaBox.Maximum = 50;
-			this.GammaBox.Minimum = 1;
-			this.GammaBox.Name = "GammaBox";
-			this.GammaBox.Size = new System.Drawing.Size(223, 21);
-			this.GammaBox.TabIndex = 9;
-			this.GammaBox.Value = 25;
-			this.GammaBox.Scroll += new System.EventHandler(this.GammaBox_Scroll);
-			// 
-			// GammaValue
-			// 
-			this.GammaValue.AutoSize = true;
-			this.GammaValue.Location = new System.Drawing.Point(53, 10);
-			this.GammaValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-			this.GammaValue.Name = "GammaValue";
-			this.GammaValue.Size = new System.Drawing.Size(22, 13);
-			this.GammaValue.TabIndex = 10;
-			this.GammaValue.Text = "2.5";
+			this.Parameters.Controls.Add(this.TabCorrection);
+			this.Parameters.Controls.Add(this.TabGamma);
+			this.Parameters.Controls.Add(this.TabNoise);
+			this.Parameters.Enabled = false;
+			this.Parameters.Location = new System.Drawing.Point(11, 11);
+			this.Parameters.Name = "Parameters";
+			this.Parameters.SelectedIndex = 0;
+			this.Parameters.Size = new System.Drawing.Size(245, 130);
+			this.Parameters.TabIndex = 2;
+			this.Parameters.SelectedIndexChanged += new System.EventHandler(this.Parameters_SelectedIndexChanged);
 			// 
 			// TabCorrection
 			// 
@@ -475,37 +360,15 @@
 			this.TabCorrection.Text = "Correction";
 			this.TabCorrection.UseVisualStyleBackColor = true;
 			// 
-			// CorrectionTypeLabel
+			// CoefficientValue
 			// 
-			this.CorrectionTypeLabel.AutoSize = true;
-			this.CorrectionTypeLabel.Location = new System.Drawing.Point(7, 10);
-			this.CorrectionTypeLabel.Name = "CorrectionTypeLabel";
-			this.CorrectionTypeLabel.Size = new System.Drawing.Size(34, 13);
-			this.CorrectionTypeLabel.TabIndex = 0;
-			this.CorrectionTypeLabel.Text = "Type:";
-			// 
-			// CorrectionType
-			// 
-			this.CorrectionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.CorrectionType.FormattingEnabled = true;
-			this.CorrectionType.Items.AddRange(new object[] {
-            "Linear",
-            "Nonlinear"});
-			this.CorrectionType.Location = new System.Drawing.Point(47, 7);
-			this.CorrectionType.Name = "CorrectionType";
-			this.CorrectionType.Size = new System.Drawing.Size(183, 21);
-			this.CorrectionType.TabIndex = 1;
-			this.CorrectionType.SelectedIndexChanged += new System.EventHandler(this.CorrectionType_SelectedIndexChanged);
-			// 
-			// CoefficientLabel
-			// 
-			this.CoefficientLabel.AutoSize = true;
-			this.CoefficientLabel.Location = new System.Drawing.Point(7, 38);
-			this.CoefficientLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-			this.CoefficientLabel.Name = "CoefficientLabel";
-			this.CoefficientLabel.Size = new System.Drawing.Size(60, 13);
-			this.CoefficientLabel.TabIndex = 2;
-			this.CoefficientLabel.Text = "Coefficient:";
+			this.CoefficientValue.AutoSize = true;
+			this.CoefficientValue.Location = new System.Drawing.Point(67, 38);
+			this.CoefficientValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+			this.CoefficientValue.Name = "CoefficientValue";
+			this.CoefficientValue.Size = new System.Drawing.Size(19, 13);
+			this.CoefficientValue.TabIndex = 5;
+			this.CoefficientValue.Text = "25";
 			// 
 			// CoefficientBox
 			// 
@@ -520,28 +383,165 @@
 			this.CoefficientBox.Value = 25;
 			this.CoefficientBox.Scroll += new System.EventHandler(this.CoefficientBox_Scroll);
 			// 
-			// CoefficientValue
+			// CoefficientLabel
 			// 
-			this.CoefficientValue.AutoSize = true;
-			this.CoefficientValue.Location = new System.Drawing.Point(67, 38);
-			this.CoefficientValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-			this.CoefficientValue.Name = "CoefficientValue";
-			this.CoefficientValue.Size = new System.Drawing.Size(19, 13);
-			this.CoefficientValue.TabIndex = 5;
-			this.CoefficientValue.Text = "25";
+			this.CoefficientLabel.AutoSize = true;
+			this.CoefficientLabel.Location = new System.Drawing.Point(7, 38);
+			this.CoefficientLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+			this.CoefficientLabel.Name = "CoefficientLabel";
+			this.CoefficientLabel.Size = new System.Drawing.Size(60, 13);
+			this.CoefficientLabel.TabIndex = 2;
+			this.CoefficientLabel.Text = "Coefficient:";
 			// 
-			// Parameters
+			// CorrectionType
 			// 
-			this.Parameters.Controls.Add(this.TabCorrection);
-			this.Parameters.Controls.Add(this.TabGamma);
-			this.Parameters.Controls.Add(this.TabNoise);
-			this.Parameters.Enabled = false;
-			this.Parameters.Location = new System.Drawing.Point(11, 11);
-			this.Parameters.Name = "Parameters";
-			this.Parameters.SelectedIndex = 0;
-			this.Parameters.Size = new System.Drawing.Size(245, 130);
-			this.Parameters.TabIndex = 2;
-			this.Parameters.SelectedIndexChanged += new System.EventHandler(this.Parameters_SelectedIndexChanged);
+			this.CorrectionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.CorrectionType.FormattingEnabled = true;
+			this.CorrectionType.Items.AddRange(new object[] {
+            "Linear",
+            "Nonlinear"});
+			this.CorrectionType.Location = new System.Drawing.Point(47, 7);
+			this.CorrectionType.Name = "CorrectionType";
+			this.CorrectionType.Size = new System.Drawing.Size(183, 21);
+			this.CorrectionType.TabIndex = 1;
+			this.CorrectionType.SelectedIndexChanged += new System.EventHandler(this.CorrectionType_SelectedIndexChanged);
+			// 
+			// CorrectionTypeLabel
+			// 
+			this.CorrectionTypeLabel.AutoSize = true;
+			this.CorrectionTypeLabel.Location = new System.Drawing.Point(7, 10);
+			this.CorrectionTypeLabel.Name = "CorrectionTypeLabel";
+			this.CorrectionTypeLabel.Size = new System.Drawing.Size(34, 13);
+			this.CorrectionTypeLabel.TabIndex = 0;
+			this.CorrectionTypeLabel.Text = "Type:";
+			// 
+			// TabGamma
+			// 
+			this.TabGamma.Controls.Add(this.GammaValue);
+			this.TabGamma.Controls.Add(this.GammaBox);
+			this.TabGamma.Controls.Add(this.GammaLabel);
+			this.TabGamma.Location = new System.Drawing.Point(4, 22);
+			this.TabGamma.Name = "TabGamma";
+			this.TabGamma.Padding = new System.Windows.Forms.Padding(4);
+			this.TabGamma.Size = new System.Drawing.Size(237, 104);
+			this.TabGamma.TabIndex = 1;
+			this.TabGamma.Text = "Gamma";
+			this.TabGamma.UseVisualStyleBackColor = true;
+			// 
+			// GammaValue
+			// 
+			this.GammaValue.AutoSize = true;
+			this.GammaValue.Location = new System.Drawing.Point(53, 10);
+			this.GammaValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+			this.GammaValue.Name = "GammaValue";
+			this.GammaValue.Size = new System.Drawing.Size(22, 13);
+			this.GammaValue.TabIndex = 10;
+			this.GammaValue.Text = "2.5";
+			// 
+			// GammaBox
+			// 
+			this.GammaBox.AutoSize = false;
+			this.GammaBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.GammaBox.Location = new System.Drawing.Point(7, 26);
+			this.GammaBox.Maximum = 50;
+			this.GammaBox.Minimum = 1;
+			this.GammaBox.Name = "GammaBox";
+			this.GammaBox.Size = new System.Drawing.Size(223, 21);
+			this.GammaBox.TabIndex = 9;
+			this.GammaBox.Value = 25;
+			this.GammaBox.Scroll += new System.EventHandler(this.GammaBox_Scroll);
+			// 
+			// GammaLabel
+			// 
+			this.GammaLabel.AutoSize = true;
+			this.GammaLabel.Location = new System.Drawing.Point(7, 10);
+			this.GammaLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+			this.GammaLabel.Name = "GammaLabel";
+			this.GammaLabel.Size = new System.Drawing.Size(46, 13);
+			this.GammaLabel.TabIndex = 8;
+			this.GammaLabel.Text = "Gamma:";
+			// 
+			// TabNoise
+			// 
+			this.TabNoise.Controls.Add(this.SizeValue);
+			this.TabNoise.Controls.Add(this.SizeBox);
+			this.TabNoise.Controls.Add(this.SizeLabel);
+			this.TabNoise.Controls.Add(this.StrengthValue);
+			this.TabNoise.Controls.Add(this.StrengthBox);
+			this.TabNoise.Controls.Add(this.StrengthLabel);
+			this.TabNoise.Location = new System.Drawing.Point(4, 22);
+			this.TabNoise.Name = "TabNoise";
+			this.TabNoise.Padding = new System.Windows.Forms.Padding(4);
+			this.TabNoise.Size = new System.Drawing.Size(237, 104);
+			this.TabNoise.TabIndex = 2;
+			this.TabNoise.Text = "Noise";
+			this.TabNoise.UseVisualStyleBackColor = true;
+			// 
+			// SizeValue
+			// 
+			this.SizeValue.AutoSize = true;
+			this.SizeValue.Location = new System.Drawing.Point(38, 56);
+			this.SizeValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+			this.SizeValue.Name = "SizeValue";
+			this.SizeValue.Size = new System.Drawing.Size(27, 13);
+			this.SizeValue.TabIndex = 16;
+			this.SizeValue.Text = "75%";
+			// 
+			// SizeBox
+			// 
+			this.SizeBox.AutoSize = false;
+			this.SizeBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.SizeBox.Location = new System.Drawing.Point(7, 72);
+			this.SizeBox.Maximum = 100;
+			this.SizeBox.Minimum = 5;
+			this.SizeBox.Name = "SizeBox";
+			this.SizeBox.Size = new System.Drawing.Size(223, 21);
+			this.SizeBox.TabIndex = 15;
+			this.SizeBox.Value = 75;
+			this.SizeBox.Scroll += new System.EventHandler(this.SizeBox_Scroll);
+			// 
+			// SizeLabel
+			// 
+			this.SizeLabel.AutoSize = true;
+			this.SizeLabel.Location = new System.Drawing.Point(7, 56);
+			this.SizeLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+			this.SizeLabel.Name = "SizeLabel";
+			this.SizeLabel.Size = new System.Drawing.Size(30, 13);
+			this.SizeLabel.TabIndex = 14;
+			this.SizeLabel.Text = "Size:";
+			// 
+			// StrengthValue
+			// 
+			this.StrengthValue.AutoSize = true;
+			this.StrengthValue.Location = new System.Drawing.Point(57, 10);
+			this.StrengthValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+			this.StrengthValue.Name = "StrengthValue";
+			this.StrengthValue.Size = new System.Drawing.Size(19, 13);
+			this.StrengthValue.TabIndex = 13;
+			this.StrengthValue.Text = "40";
+			// 
+			// StrengthBox
+			// 
+			this.StrengthBox.AutoSize = false;
+			this.StrengthBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.StrengthBox.Location = new System.Drawing.Point(7, 26);
+			this.StrengthBox.Maximum = 60;
+			this.StrengthBox.Minimum = 10;
+			this.StrengthBox.Name = "StrengthBox";
+			this.StrengthBox.Size = new System.Drawing.Size(223, 21);
+			this.StrengthBox.TabIndex = 12;
+			this.StrengthBox.Value = 40;
+			this.StrengthBox.Scroll += new System.EventHandler(this.StrengthBox_Scroll);
+			// 
+			// StrengthLabel
+			// 
+			this.StrengthLabel.AutoSize = true;
+			this.StrengthLabel.Location = new System.Drawing.Point(7, 10);
+			this.StrengthLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+			this.StrengthLabel.Name = "StrengthLabel";
+			this.StrengthLabel.Size = new System.Drawing.Size(50, 13);
+			this.StrengthLabel.TabIndex = 11;
+			this.StrengthLabel.Text = "Strength:";
 			// 
 			// Apply
 			// 
@@ -553,6 +553,17 @@
 			this.Apply.Text = "Apply";
 			this.Apply.UseVisualStyleBackColor = true;
 			this.Apply.Click += new System.EventHandler(this.Apply_Click);
+			// 
+			// StopButton
+			// 
+			this.StopButton.Enabled = false;
+			this.StopButton.Location = new System.Drawing.Point(96, 175);
+			this.StopButton.Name = "StopButton";
+			this.StopButton.Size = new System.Drawing.Size(74, 23);
+			this.StopButton.TabIndex = 6;
+			this.StopButton.Text = "Stop";
+			this.StopButton.UseVisualStyleBackColor = true;
+			this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
 			// 
 			// CurrentEffect
 			// 
@@ -581,17 +592,6 @@
 			this.PauseButton.Text = "Pause";
 			this.PauseButton.UseVisualStyleBackColor = true;
 			this.PauseButton.Click += new System.EventHandler(this.PauseButton_Click);
-			// 
-			// StopButton
-			// 
-			this.StopButton.Enabled = false;
-			this.StopButton.Location = new System.Drawing.Point(96, 175);
-			this.StopButton.Name = "StopButton";
-			this.StopButton.Size = new System.Drawing.Size(74, 23);
-			this.StopButton.TabIndex = 6;
-			this.StopButton.Text = "Stop";
-			this.StopButton.UseVisualStyleBackColor = true;
-			this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
 			// 
 			// Tabs
 			// 
@@ -628,17 +628,17 @@
 			this.StatusBar.PerformLayout();
 			this.ImageMenu.ResumeLayout(false);
 			this.ControlsPanel.ResumeLayout(false);
-			this.TabNoise.ResumeLayout(false);
-			this.TabNoise.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.StrengthBox)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.SizeBox)).EndInit();
-			this.TabGamma.ResumeLayout(false);
-			this.TabGamma.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.GammaBox)).EndInit();
+			this.Parameters.ResumeLayout(false);
 			this.TabCorrection.ResumeLayout(false);
 			this.TabCorrection.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CoefficientBox)).EndInit();
-			this.Parameters.ResumeLayout(false);
+			this.TabGamma.ResumeLayout(false);
+			this.TabGamma.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.GammaBox)).EndInit();
+			this.TabNoise.ResumeLayout(false);
+			this.TabNoise.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.SizeBox)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.StrengthBox)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

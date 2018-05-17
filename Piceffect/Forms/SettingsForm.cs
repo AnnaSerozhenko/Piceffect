@@ -35,7 +35,7 @@ namespace Piceffect
 		private void DatabaseButton_Click(object sender, System.EventArgs e)
 		{
 			if (SelectFolder.ShowDialog() == DialogResult.OK)
-				DatabaseBox.Text = SelectFolder.SelectedPath + "\\Database.txt";
+				DatabaseBox.Text = SelectFolder.SelectedPath + "\\Database.sqlite";
 		}
 
 		private void LogButton_Click(object sender, System.EventArgs e)
@@ -51,7 +51,7 @@ namespace Piceffect
 
 		private void DatabaseRoot_Click(object sender, System.EventArgs e)
 		{
-			DatabaseBox.Text = "Database.txt";
+			DatabaseBox.Text = "Database.sqlite";
 		}
 
 		private void LogRoot_Click(object sender, System.EventArgs e)
